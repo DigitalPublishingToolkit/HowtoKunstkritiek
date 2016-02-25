@@ -78,6 +78,11 @@ Ook is bekeken welke open source tools om een longform te producen er reeds besc
 ![](lib/ArchiNed_Comparison-chart.png)
 
 ##Technische overwegingen 
+
+Bedenk vooraf goed waar de tools aan moeten voldoen. Denk bijvoorbeeld aan welke file types ondersteund moeten worden en aan de implementatie op de website van bijvoorbeeld het medium.
+
+Vergeet bij het kiezen van een tool niet naar het licentiebeleid en de businessmodels te kijken. Zo kan het zijn dat je met het maken van een longform of timeline de rechten op de inhoud volledig afstaat. Daarnaast is het met gratis tools ook vaak zo dat er advertenties worden toegevoegd aan de timeline of longform. 
+
 Aesop Engine (Wordpress plugin)
 <div class="difficulty-level moderate"></div>
 
@@ -100,22 +105,22 @@ Exposure <br>
 [Memolane](http://memolane.com/) <br>
 
 
-##Leuke Linkjes <br>
+##Links <br>
 [The SIMILE project of MIT](http://www.simile-widgets.org/) <br>
 [KnightLab](https://projects.knightlab.com/)<br>
 Lasso Frontend editor 
 </div>
 
 
-#Het Video Essay
+#Het video-essay
 <div class="difficulty-level expert"></div>
 
 ##Introductie 
-Hoe kunnen we optimaal gebruik maken van de mogelijkheden van het web om een video essay te maken? In dit experiment is er gewerkt naar verschillende elementen: tekst, video’s, citaten uit de romans en geanimeerde dialogen.
+Hoe kunnen we optimaal gebruik maken van de mogelijkheden van het web om een video-essay te maken? In dit experiment is er gewerkt naar verschillende elementen: tekst, video’s, citaten uit de romans en geanimeerde dialogen.
 
 ##Het experiment
 In dit experiment is er gezocht naar verschillende elementen om het essay te verreiken en hoe deze elementen onderdeel kunnen zijn van de lopende tekst.
-Hoe de leegbaarheid optimaal te houden?
+Hoe de leesbaarheid optimaal te houden?
 
 ![](lib/video.png)
 
