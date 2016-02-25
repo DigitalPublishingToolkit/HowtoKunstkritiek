@@ -27,7 +27,7 @@ Hoe kunnen we op zinvolle wijze online kritiek bedrijven en koe kan de digitale 
 ##Wat vind je in deze how-to Deze how-to biedt een praktische 'guide' voor culturele tijdschriften, kleine uitgeverijen, websites, blogs, critici, schrijvers, ontwerpers en ontwikkelaars voor het creëren en verrijken van longform-artikelen. Hoe maak je een longform? Waar te beginnen? In deze publicatie vind je vier verschillende experimenten - voorbeelden van longforms - met benodigdheden en tips om zelf aan de slag te gaan.  
 
 ##Voor wie is deze how-to
-De how-to is tot stand gekomen in samenwerking met kunstcritici, redacteuren, vormgevers, webdevelopers en onderzoekers. 
+De how-to is tot stand gekomen in samenwerking met kunstcritici, redacteuren, vormgevers, webdevelopers en onderzoekers en is ook bedoeld voor iedereen die zich bezig wil houden met nieuwe vormen van kunstkritiek in het digitale domein.
 
 ##Wat is longform
 Er bestaat geen duidelijke definitie van wat longform is, veelal wordt ermee verwezen naar diepgaande online artikelen met een grote hoeveelheid content, die alle technieken van online schrijven belichamen. Hier benaderen we longforms als multimedia-essays die verrijkt kunnen worden met foto's, video's, tijdlijnen, biografieën, audioboeken, interviews, infographics, kaarten, interne en externe links etc.
@@ -42,33 +42,38 @@ In deze how-to zijn vier experimenten met longforms te vinden, elk met een eigen
 Redactie: Leonieke van Dipten & Miriam Rasch<br>
 Design: Lasse van den Bosch Christensen & Marlon Harder, 
 [Template](http://www.template01.info/)<br>
-Met dank aan: Marina van den Berg (ArchiNed), Wouter Hillaert (rekto:verso), Daphne Rieken, Nadine Roestenburg, Laurence Scherz, Sonja van der Valk & Sophia Zürcher.
+Met dank aan: Marina van den Berg (ArchiNed), Wouter Hillaert (rekto:verso), Daphne Rieken, Nadine Roestenburg, Laurence Scherz, Sonja van der Valk & Sophia Zürcher.  
+Uitgegeven door PublishingLab en Instituut voor Netwerkcultuur, Hogeschool van Amsterdam, met ondersteuning van Domein voor Kunstkritiek, Letterenfonds en Amsterdam Creative Industries Network [logo's]  
+Amsterdam, 2016  
+Contact: [PublishingLab](http://www.publishinglab.nl/) en [Instituut voor Netwerkcultuur](http://www.networkcultures.org)
 </div>
 
 
 #Lessons learned
-##Auteurs<br><li>Denk vanuit de content.</li><li>Denk na over een hybrid workflow: wat heb je nodig: audio, video tekst etc? En hoe kun je deze verbinden met elkaar en de mensen die je hiervoor nodig hebt. </li><li>Vertrouw op de expertise van web developers en designers en betrek ze in een zo vroeg mogelijk stadium. Zij denken vanuit de techniek en zijn mogelijkheden en op deze manier hoeft dat geen belemmering te zijn. </li><li>Een eerste publicatie is een investering qua tijd en geld, elk artikel wat daarna komt is die investering waard. </li><li>Meestal blijkt er technisch meer mogelijk dan op voorhand gedacht. </li>##Developers (misschien nog aan te vullen door Lasse en Marlon)<br><li>Denk aan de backend en of je gebruik maakt van een Content Management Systeem(CMS).</li>
+##Auteurs<br><li>Denk vanuit de content: wat wil je zeggen en hoe kun je dat het beste doen? Een bespreking van de productie van een film kan misschien beter in bewegend beeld dan in tekst gebeuren; vertellen waarom een boek je raakt misschien wel door een vlog.</li><li>Denk na over een hybride workflow. Dat betekent dat je vanaf het begin in kaart brengt wat je nodig hebt - audio, video, tekst, beeld - en zorgt dat die verschillende vormen geproduceerd worden. Welke expertise is nodig? Hoe kun je die vormen verbinden met elkaar? </li><li>Vertrouw op de expertise van webdevelopers en designers en betrek ze in een zo vroeg mogelijk stadium. Laat ze meedenken vanuit de technische mogelijkheden zodat techniek geen belemmering hoeft te zijn. </li><li>Een eerste longformpublicatie is een investering qua tijd en geld, elk artikel dat daarna komt is die investering waard. </li><li>Meestal blijkt er technisch meer mogelijk dan op voorhand gedacht. </li>##Developers<br><li>Denk aan de backend en of je gebruik maakt van een Content Management Systeem (CMS).</li>
 <li>Overweeg de responsiveness en offline reading mogelijkheden.</li>
+<li>Welke tools zijn open source beschikbaar en geschikt voor herhaald gebruik.</li>
+<li>Online content is niet definitief, maar kan bijna altijd makkelijk geüpdatet worden.</li>
+<li>Denk aan de hybride mogelijkheden. Houd de inhoud (tekst, beeld, video) wel apart van hoe de longform werkt of eruit ziet. Maak het ontwerp zo flexibel mogelijk.</li>
 
 
-#De Multimediale Essay
+#Het multimediale essay
 <div class="difficulty-level easy"></div>
 <div class="difficulty-level moderate"></div>
 
 
 ##Introductie 
-Welke open source tools zijn er reeds beschikbaar om longforms te produceren en online content te verrijken en verbeteren? In dit experiment vind je een overzicht van longform, tijdline en image annotation tools die gemakkelijk en zonder al te veel technische kennis toe te passen zijn. 
+Welke open source tools zijn er reeds beschikbaar om longforms te produceren en online content te verrijken en verbeteren? In dit experiment vind je een overzicht van longform, tijdliijn- en image annotation tools die gemakkelijk en zonder al te veel technische kennis toe te passen zijn. 
 
 ##Het experiment 
-**Image annotatie tools en timeline tools** <br>
+**Tijdlijn- en image annotation tools** <br>
 
+In samenwerking met ArchiNed zijn verschillende tijdlijntools onderzocht: Timeline JS, Timeglider, Tiki Toki, Dipity en Timeline Express. Timeline JS is open source, Dippity, Tiki Toki, Timeglider en Timeline Express gebruiken een Freemium model. 
 
-Lees de gehele blogpost over het onderzoek [hier](http://www.publishinglab.nl/dekunstvandekritiek/2015/04/30/timeline-and-annotation-tools/). 
+Annotatietools die zijn getest zijn Thinglink, Annotorious en Cowbird. Een overzicht van voor- en nadelen, advies en aanbevelingen over de verschillende tools, lees je in de [blogpost over het onderzoek](http://www.publishinglab.nl/dekunstvandekritiek/2015/04/30/timeline-and-annotation-tools/). 
 
 **Longform platforms** <br>
-Welke open source tools zijn er reeds beschikbaar om een longform te producen? 
-
-Lees de gehele blogpost over longform tools [hier](http://www.publishinglab.nl/dekunstvandekritiek/2015/03/31/developing-a-longform-platform-for-the-inc/). 
+Ook is bekeken welke open source tools om een longform te producen er reeds beschikbaar zijn. De volgende platforms en tools zijn nader onderzocht: Medium, Aesop Story Engine (WordPress plugin), Creatavist en Exposure. Voor een overzicht van de bevindingen en verdere aanbevelingen, zie de [blogpost over longform tools](http://www.publishinglab.nl/dekunstvandekritiek/2015/03/31/developing-a-longform-platform-for-the-inc/). 
 
 ![](lib/ArchiNed_Comparison-chart.png)
 
