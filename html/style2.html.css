@@ -423,19 +423,6 @@ blockquote p {
   font-family: 'Roboto Condensed', monospace;
 }
 
-/* FOOTER */
-
-#footer {
-  /*float: right;*/
-  background: azure;
-  width: 25%;
-  z-index: 0;
-}
-
-#colofon {
-  background: azure;
-}
-
 /* IMAGES * video */
 
 .figure {
