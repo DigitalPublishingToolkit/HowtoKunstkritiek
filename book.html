@@ -18,8 +18,8 @@
   </script>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,700italic,700,500italic,500,400italic,300italic,300,100,100italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700italic,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Karma:400,500,700,600,300' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <script>
@@ -46,7 +46,8 @@
   
         // resizeable stuff
   
-        $(function() {
+  
+        function resizeAll(){
           $(".level1, .linkbox, .infobox, #header" ).resizable({
             handles: 'e',
             cancel: '.fullWidth',
@@ -60,8 +61,9 @@
             }
   
           });
+        }
   
-        });
+        // resizeAll()
   
         //generate header
   
@@ -143,6 +145,7 @@
   
         $('.linkbox, .infobox').each(function() {
           $(this).children().not('h1, .ui-resizable-handle').wrapAll('<div class="level2"></div>');
+          console.log($(this).children())
         })
   
         // toggle full div width
@@ -203,17 +206,18 @@
         if (window.location.hash == '#stylea' || window.location.hash == '' ){
         $('#b').remove()
         $('body').addClass('activeStyleA')
+  
+        resizeAll()
+  
       }else{
           $('head').append(styleB)
           $('#a').remove()
           $('body').removeClass('activeStyleA')
           $('#toggleMode').addClass('aActive')
           $('#toggleMode').removeClass('bActive')
-        if($(".level1, .linkbox, .infobox, #header" ).hasClass('ui-resizable')){
-          $(".level1, .linkbox, .infobox, #header" ).resizable('disable')
-        }
-        window.location.hash = 'styleb'
+          window.location.hash = 'styleb'
       }
+  
   
     }
   
@@ -241,15 +245,21 @@
         $('#b').remove()
         $('#toggleMode').addClass('bActive')
         $('#toggleMode').removeClass('aActive')
+  
+        resizeAll()
+        
         $(".level1, .linkbox, .infobox, #header" ).resizable('enable')
   
         window.location.hash = 'stylea'
+  
+  
   
       }
   
       positionPlayButton()
   
     }
+  
   
     // Toggle Mode
   
@@ -346,6 +356,18 @@
         $('body').find('.figure').first().remove()
       })
   
+      // let's open links in a new tab 
+      $('.level1 a, .infobox a, .linkbox a').each(function(){
+        var attr = $(this).attr('target');
+  
+        // For some browsers, `attr` is undefined; for others,
+        // `attr` is false.  Check for both.
+        if (!typeof attr !== typeof undefined && !attr !== false) {
+          $(this).attr('target','_blank')
+            // ...
+        }
+      })
+  
   
     })
   
@@ -374,7 +396,6 @@
     margin: 0px;
     background-color: transparent;
     width: calc(50% - 10px);
-    /*width: calc(70% - 20px);*/
     text-align: center;
     margin-top: 10px;
       -webkit-user-select: none;  /* Chrome all / Safari all */
@@ -421,6 +442,13 @@
   .infobox:hover .ui-resizable-e,
   #header:hover .ui-resizable-e {
     background: rgba(255,255,150,1);
+  }
+  
+  
+  .linkbox:hover,
+  .infobox:hover,
+  .thumbnail{
+    z-index: 10;
   }
   
   .pagetitle{
@@ -497,7 +525,7 @@
   }
   
   h2 {
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: -5px;
   }
   
@@ -519,7 +547,11 @@
     color: black;
     font-size: 15px;
     font-weight: 400;
-    word-wrap: break-word;
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
   }
   
   pre {
@@ -552,7 +584,6 @@
     background: lightcyan;
     position: relative;
     right: 0;
-    /*z-index: 7;*/
   }
   
   .infobox {
@@ -562,7 +593,6 @@
     background: #D8F3D1;
     position: relative;
     right: 0;
-    /*z-index: 7;*/
   }
   
   .infobox .level2 {
@@ -609,15 +639,15 @@
   }
   
   .expert::after {
-    content: "expert";
+    content: "difficulty level: expert";
   }
   
   .moderate::after {
-    content: "moderate";
+    content: "difficulty level: moderate";
   }
   
   .easy::after {
-    content: "easy";
+    content: "difficulty level: easy";
   }
   
   .level1 {
@@ -868,13 +898,6 @@
     border: 1px solid black;
   }
   
-  /*.lightbox:target {
-    outline: none;
-    display: block;
-  }*/
-  
-  /**/
-  
   [id*="intro"] {
   }
   
@@ -944,6 +967,11 @@
     transition: width 0.3s;
   }
   
+  .fullWidth video,
+  .fullWidth .videoPlay {
+    width: 30%;
+  }
+  
   .initWidth {
     width: ;
     transition: width 0.3s;
@@ -1008,7 +1036,8 @@
     .level2 .figure {
       float: none;
       margin: 0;
-    margin-left: 10px;
+      margin-left: 10px;
+      margin-bottom: 10px;
   
     }
   
@@ -1215,18 +1244,15 @@
     padding: 0px;
     margin: 0px;
     background-color: transparent;
-    /*width: calc(70% - 20px);*/
     text-align: center;
-      -webkit-user-select: none;  /* Chrome all / Safari all */
+    -webkit-user-select: none;  /* Chrome all / Safari all */
     -moz-user-select: -moz-none;     /* Firefox all */
     -ms-user-select: none;      /* IE 10+ */
     user-select: none;          /* Likely future */     
     transition: opacity 0.5s;
     font-size: 72px;
     margin-right: -10px;
-      margin-left: 35%;
-      width: 30%;
-  
+    width: 60%;
   }
   
   .highlightThis h1{
@@ -1244,6 +1270,7 @@
     -o-transition: color 0.1s ease-in-out; /* Opera */
   }
   
+  
   html {
     background: #FAF8F4;
   }
@@ -1251,21 +1278,34 @@
   body {
     margin: 0;
     overflow-x: hidden;
-    margin-top: 125px;  
+    margin-top: 125px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    font-size: 21px;
   }
   
   body, html {
-    /*font-family: 'Libre Baskerville', serif;*/
-    font-family: 'Roboto Slab', serif;
-    font-size: 20px;
     color: #545454;
   }
   
   div {
     padding: 10px;
-    padding-bottom: 0;
     margin: 10px 20px;
+    width: calc(100% - 42px);
+    float: left;
     position: initial;
+  }
+  
+  blockquote,
+  blockquote p {
+    line-height: 2;
+    margin: 0;
+  }
+  
+  .level1 {
+    width: calc(50%);
+    max-width: calc(100% - 64px);
+    min-width: calc(25% - 64px);
   }
   
   .level3 {
@@ -1300,36 +1340,38 @@
     width: 50%;
   }
   
-  .level1 h1 {
-    font-size: 40px;
-    font-family: 'Roboto Slab', serif;
-    text-align: center;
-    font-weight: 200;
+  h1, h2, h3{
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-family: 'Roboto Condensed', sans-serif;
   }
   
-  /*.level1 {
-    margin-top: 50px;
+  h1 {
+    font-size: 26px;
   }
-  */
+  
   h2 {
-    font-family: 'Libre Baskerville', serif;
-    font-family: 'Roboto Slab', serif;
-    font-size: 20px;
-    text-align: center;
-    letter-spacing: 4px;
+    font-size: 22px;
   }
   
   h3 {
-    font-family: 'Libre Baskerville', serif;
-    font-family: 'Roboto Slab', serif;
     font-size: 20px;
-    margin-bottom: -10px;
+  }
+  
+  strong, b {
+    font-weight: 400;
+  }
+  
+  .infobox strong,
+  .infobox b,
+  .linkbox strong,
+  .linkbox b {
     font-weight: 700;
-    /*text-decoration: underline;*/
   }
   
   p, li, code {
-    line-height: 1.5;
+    line-height: 1.6;
   }
   
   code {
@@ -1344,18 +1386,20 @@
     margin: 10px 10px 0 20px;
   }
   
+  .level1 a,
   p>a,
   li>a {
-    border-bottom: 1px solid #545454 ;
+    border-bottom: 1px solid #545454;
     color: #545454 ;
     text-decoration: none;
   }
   
+  .level1 a:hover,
   p>a:hover,
   li>a:hover {
     border: 0;
     background-color: #545454;
-    color: white;
+    color: #FAF8F4;
   }
   
   .figure a,
@@ -1363,95 +1407,16 @@
     border: 0;
   }
   
-  .linkbox,
-  .infobox,
-  blockquote {
-    width: calc(50% - 13px);
-    float: none;
-    border: 1px solid #545454;
-    -webkit-box-shadow: 2px 2px 0px 0px #545454;
-    -moz-box-shadow: 2px 2px 0px 0px #545454;
-    box-shadow: 2px 2px 0px 0px #545454;
-    z-index: 7;
-    margin: 20px 0;
-    margin-left: calc(24% + 13px);
-    padding: 25px;
-  }
-  
-  .linkbox p,
-  .linkbox h1,
-  .linkbox h2,
-  .linkbox h3 {
-    word-wrap: break-word;
-  }
-  
-  .infobox {
-    background: #545454;
-    color: #FAF8F4;
-  }
-  
-  .infobox a{
-    color: #FAF8F4;
-    text-decoration: none;
-    border-bottom: 1px solid #FAF8F4;
-    padding-bottom: 1px;
-    margin-bottom: -1px;
-  }
-  .linkbox h3,
-  .infobox h3 {
-    margin: 0;
-    margin-bottom: -10px;
-  }
-  
-  .infobox a {
-    color: #FAF8F4;
-    border-bottom: 1px solid #FAF8F4;
-  }
-  
-  .infobox a:hover {
-    background-color: #FAF8F4;
-    color: #545454;
-  }
-  
-  blockquote {
-    line-height: 1.6;
-    letter-spacing: 2px;
-    font-size: 20px;
-    font-weight: 300;
-    background: #FAF8F4; 
-  }
-  
-  blockquote p {
-    width: 100% !important;
-    margin: 0 !important;
-  }
-  
   .difficulty-level {
     width: auto;
-    padding: 10px;
+    padding: 0;
     display: inline-block;
-    margin: 5px 5px 5px 24%;
-    font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 1px;
-  }
-  
-  .difficulty-level.easy {
-    -webkit-box-shadow: 2px 2px 0px 0px #545454;
-    -moz-box-shadow: 2px 2px 0px 0px #545454;
-    box-shadow: 2px 2px 0px 0px #545454;
-  }
-  
-  .difficulty-level.moderate {
-    -webkit-box-shadow: 2px 2px 0px 0px #545454;
-    -moz-box-shadow: 2px 2px 0px 0px #545454;
-    box-shadow: 2px 2px 0px 0px #545454;
-  }
-  
-  .difficulty-level.expert {
-    -webkit-box-shadow: 2px 2px 0px 0px #545454;
-    -moz-box-shadow: 2px 2px 0px 0px #545454;
-    box-shadow: 2px 2px 0px 0px #545454;
+    margin: 5px 5px 5px 0;
+    float: none;
+    font-weight: 700; 
+    font-family: 'Roboto Condensed', serif;
+    font-size: 17px;
+    border: 0;
   }
   
   .expert::after {
@@ -1467,18 +1432,57 @@
   }
   
   .level2 {
-    margin: 5px -10px;
+    margin: 0 -10px;
+    width: 100%;
   }
   
-  .level1 p,
-  .level1 pre,
-  .level1 h1,
-  .level1 ul,
-  .level2 h2,
-  .level3 h3 {
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
+  li>p {
+    margin: initial !important;
+    width: initial !important;
+  }
+  
+  .level1 ol,
+  .level1 ul {
+    padding-left: 20px;
+  }
+  
+  .level1 li {
+    padding: 0 5px 10px 5px;
+  }
+  
+  /* infobox ~ linkbox */
+  
+  .linkbox {
+    width: calc(25%);
+    max-width: calc(100% - 64px);
+    min-width: calc(25% - 64px);
+    position: relative;
+    padding-bottom: 0;
+  }
+  
+  .infobox {
+    width: calc(15%);
+    max-width: calc(100% - 64px);
+    min-width: calc(15% - 64px);
+    position: relative;
+    right: 0;
+    padding-bottom: 0;
+  }
+  
+  .infobox p,
+  .linkbox p {
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  
+  .linkbox h1,
+  .linkbox h2,
+  .linkbox h3,
+  .infobox h1,
+  .infobox h2,
+  .infobox h3 {
+    font-weight: 700;
   }
   
   /* in text lists */
@@ -1527,7 +1531,6 @@
     float: right;
     background: #545454;
     font-size: 20px;
-    font-family: 'Roboto Condensed', sans-serif;
   }
   
   .navWrap {
@@ -1548,6 +1551,7 @@
     position:relative;
     width: 500px;
     background: #545454;
+    font-family: 'Roboto Condensed', sans-serif;
   }
   
   #header a {
@@ -1556,7 +1560,7 @@
     line-height:1.2em;
     background: none;
     border: 0;
-    color: white;
+    color: #FAF8F4;
     font-weight: 500;
     text-decoration: none;
   }
@@ -1617,31 +1621,14 @@
     font-family: 'Roboto Condensed', monospace;
   }
   
-  /* FOOTER */
-  
-  #footer {
-    /*float: right;*/
-    background: azure;
-    width: 25%;
-    z-index: 0;
-  }
-  
-  #colofon {
-    background: azure;
-  }
-  
   /* IMAGES * video */
   
   .figure {
     padding: 0;
     margin: 10px 0;
     z-index: 5;
-    width: 20%;
-    height: 0;
-  }
-  
-  .figureRight {
-    float: right;
+    width: 60%;
+    float: none;
   }
   
   img {
@@ -1683,7 +1670,6 @@
   
   .lightbox img {
     max-width: 75%;
-    /*max-height: 90%;*/
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
     margin: auto;
@@ -1695,22 +1681,19 @@
   }
   
   video {
-    width: 30%;
+    width: 60%;
     height: auto;
-    margin-left: 35%;
+    border: 1px solid #545454;
     -webkit-box-shadow: 2px 2px 0px 0px #545454;
     -moz-box-shadow: 2px 2px 0px 0px #545454;
     box-shadow: 2px 2px 0px 0px #545454;
-    background: transparent ;
+    background: transparent;
+    float: none;
+    margin: 10px 0;
   }
   
   video:hover {
     background: transparent;
-  }
-  
-  /**/
-  
-  [id*="intro"] {
   }
   
   /* toggle options */
@@ -1757,37 +1740,25 @@
     transition: width 0.3s;
   }
   
-  .fullWidth .figureLeft,
-  .fullWidth .figureRight {
-    width: 15%;
-    float: none;
-    margin: 5px 20px 5px 0;
-  }
-  
   .level1.fullWidth {
     padding: 10px;
     margin: 10px 20px;
   }
   
   .fullWidth.linkbox,
-  .fullWidth.infobox,
-  .fullWidth.level1 ul {
-    margin: 15px 15px;
-    padding: 0 20px 10px 20px;
-    width: calc(100% - 84px);
+  .fullWidth.infobox {
+    float: left;
+    width: calc(50% - 60px);
+  }
+  
+  .fullWidth.linkbox p,
+  .fullWidth.infobox p {
+    font-size: 20px;
+    font-weight: 500;
   }
   
   .fullWidth blockquote {
-    margin: 10px -15px;
     width: calc(100% - 30px);
-  }
-  
-  .fullWidth p,
-  .fullWidth h1,
-  .fullWidth h2,
-  .fullWidth h3 {
-    margin: 20px 0;
-    text-align: left;
   }
   
   .fullWidth.level1 h1 {
@@ -1802,10 +1773,6 @@
     margin: 10px 10px 0 20px;
   }
   
-  .fullWidth .difficulty-level {
-    margin-left: -15px;
-  }
-  
   .initWidth {
     width: ;
     transition: width 0.3s;
@@ -1813,12 +1780,17 @@
   
   .fullWidth .figure {
     height: auto;
+    width: 30%;
   }
   
   .fullWidth video {
-    width: 20%;
+    width: 30%;
     float: none;
     margin-left: 0;
+  }
+  
+  .fullWidth .videoPlay {
+    width: 30%;
   }
   
   .pagetitle {
@@ -1827,75 +1799,54 @@
   
   @media only screen and (max-width : 1600px) {
   
-    p,
-    body,
-    h2,
-    h3,
-    blockquote,
-    .difficulty-level {
-      font-size: 18px;
-    }
-  
-    .level1 h1 {
-      font-size: 35px;
-    }
   
     .linkbox,
     .infobox {
       padding: 15px;
     }
   
-      video {
-      width: 25%;
-      margin-left: 37%;
+    .fullWidth.linkbox, .fullWidth.infobox {
+      width: calc(50% - 90px);
     }
   
-    .videoPlay{
-        margin-left: 37%;
-        width: 25%;
+   .linkbox, .infobox {
+      width: 35%;
     }
-  
   
   }
   
   @media only screen and (max-width : 1280px) {
   
+    body {
+      font-size: 19px;
+    }
+  
+      h1 {
+      font-size: 23px;
+    }
+  
+    h2 {
+      font-size: 21px;
+    }
+  
+    h3 {
+      font-size: 18px;
+      margin: initial;
+    }
+  
     #header ul > li {
       width: 400px;
     }
   
-    p,
-    body,
-    h2,
-    h3,
-    blockquote,
-    .difficulty-level {
-      font-size: 16px;
-    }
   
     #header h1 {
       font-size: 23px;
     }
   
-    .level1 h1 {
-      font-size: 30px;
-      font-weight: 300;
-    }
   
     #header ul {
       font-size: 18px;
     }
-  
-    video {
-      width: 35%;
-      margin-left: 32%;
-    }
-  
-    .videoPlay{
-        margin-left: 32%;
-        width: 35%;
-    }
-  
   
   }
   
@@ -1906,56 +1857,20 @@
       margin-top: 135px;
     }
   
-    div {
-    margin: 10px 20px;
-    }
-  
-    .level1 p, 
-    .level1 pre, 
-    .level1 h1, 
-    .level1 ul, 
-    .level2 h2, 
-    .level3 h3 {
-      width: auto;
-      margin: 10px;
-    }
-  
-    .level2 h2 {
-      letter-spacing: 3px;
-    }
-  
-    .level1{
-      width: auto;
-      margin: 0;
-    }
-  
-    .infobox,
+    div,
+    .level1,
     .linkbox,
-    blockquote {
-      width: auto;
-      margin: 20px;
+    .infobox{
+      width: 100%;
+      margin: 10px 20px;
     }
   
-    blockquote {
-      width: auto;
-      margin: 10px;
-      font-size: 13px;
+    .level1 ul li {
+      margin-bottom: 5px;
     }
   
-    ul, ol {
-      width: auto;
-      padding: 0 15px 0 25px;
-    }
-  
-    .level3 {
-      margin-top: initial;
-    }
-  
-    .difficulty-level {
-      width: 225px;
-      display: block;
-      margin: 0 auto;
-      text-align: center;
+    .linkbox, .infobox {
+      padding: 10px;
     }
   
     /*header*/
@@ -2000,55 +1915,54 @@
   
     /* fonts */
   
-    p,
-    body,
-    h2,
     h3,
-    blockquote,
-    .difficulty-level {
+    .level3 h3 {
       font-size: 17px;
     }
   
+    h2,
+    .level2 h2 {
+      font-size: 18px;
+    }
+  
+    h1,
     .level1 h1 {
-      font-size: 30px;
+      font-size: 20px;
+    }
+  
+    p,
+    body,
+    blockquote,
+    .difficulty-level {
+      font-size: 17px;
     }
   
     #header h1 {
       font-size: 20px;
     }
   
+    .linkbox p,
+    .infobox p {
+      font-size: 17px;
+      font-weight: 500;
+    }
+  
     /* images + video */
   
     .figure {
       font-size: 12px;
-      width: 60%;
-      margin: 20px 20%;
       height: auto;
-    }
-  
-    video {
-      max-width: 60%;
-      height: auto;
-      width: auto;
-      margin: 10px;
-      margin-left: 20%;
     }
   
     .videoPlay{
       font-size: 32px;
     }
   
-  
     video:hover {
       background: none;
     }
   
-    .ui-resizable-e,
-    .ui-resizable-handle {
-      display: none !important;
-    }
-  
-    .level1:hover,
+   .level1:hover,
     #header1:hover {
       animation: none;
     }
@@ -2056,81 +1970,80 @@
     .navWrap {
       float: left;
     }
-  
   }
   
   @media only screen and (max-width: 1024px) and (min-resolution: 192dpi){
-  
-  
-  .videoPlay{
-  
-      font-size: 32px;
-  
+    .videoPlay {
+        font-size: 32px;
+    }
   }
   
+  @media screen and (max-width: 1024px) and (min-resolution: 192dpi)  and (orientation: portrait) {
+  
+    #header h1 {
+        font-size: 17px;
+    }
   }
   
   </style>
 </head>
 <body>
 <div class="pagetitle">
-<h1 id="how-to-voor-digitale-kunstkritiek">How to voor Digitale Kunstkritiek</h1>
+<h1 id="how-to-voor-digitale-kunstkritiek">How-to voor digitale kunstkritiek</h1>
 </div>
 <div id="how-to-voor-digitale-kunstkritiek-1" class="section level1">
-<h1>'How to' voor Digitale Kunstkritiek</h1>
+<h1>How-to voor digitale kunstkritiek</h1>
 <div id="introductie" class="section level2">
 <h2>Introductie</h2>
-<p>Hoe kunnen we op zinvolle wijze online kritiek bedrijven en koe kan de digitale omgeving de huidige kritiek verrijken? Aan de hand van deze vragen onderzochten we de mogelijkheden die het Longform genre de kritiek bied. In deze 'how to' delen we onze ervaringen en kennis.</p>
+<p>Hoe kunnen we op zinvolle wijze online kritiek bedrijven en koe kan de digitale omgeving de huidige kunstkritiek verrijken? Met deze vragen als uitgangspunt onderzocht het PublishingLab samen met verschillende kunst- en cultuurredacties de mogelijkheden die het genre van de 'longform' de kritiek biedt. In deze 'how-to' delen we deze ervaringen en kennis. ##Wat vind je in deze how-to Deze how-to biedt een praktische 'guide' voor culturele tijdschriften, kleine uitgeverijen, websites, blogs, critici, schrijvers, ontwerpers en ontwikkelaars voor het creëren en verrijken van longform-artikelen. Hoe maak je een longform? Waar te beginnen? In deze publicatie vind je vier verschillende experimenten - voorbeelden van longforms - met benodigdheden en tips om zelf aan de slag te gaan.</p>
 </div>
-<div id="wat-vind-je-in-deze-how-to" class="section level2">
-<h2>Wat vind je in deze ‘How To’</h2>
-<p>Deze 'How To' bied een praktische 'guide' voor culturele tijdschriften, kleine uitgeverijen, websites, blogs, critici, schrijvers, ontwerpers en ontwikkelaars voor het creëren en verrijken van longforms. Hoe maak je een longform en waar te beginnen? In deze omgeving vind je vier verschillende experimenten - voorbeelden van longforms - met benodigdheden en tips om zelf aan de slag te gaan.</p>
+<div id="voor-wie-is-deze-how-to" class="section level2">
+<h2>Voor wie is deze how-to</h2>
+<p>De how-to is tot stand gekomen in samenwerking met kunstcritici, redacteuren, vormgevers, webdevelopers en onderzoekers en is ook bedoeld voor iedereen die zich bezig wil houden met nieuwe vormen van kunstkritiek in het digitale domein.</p>
 </div>
 <div id="wat-is-longform" class="section level2">
 <h2>Wat is longform</h2>
-<p>Er bestaat geen duidelijke definitie, veelal wordt er verwezen naar diepgaande online artikelen met grote hoeveelheid content, die alle technieken van online schrijven belichaamd. Wij benaderen longforms als multimedia essays die verrijkt kunnen worden met foto's, video's, tijdlijnen, biografieën, audioboeken, interviews, infographics, kaarten, interne en externe links etc.</p>
+<p>Er bestaat geen duidelijke definitie van wat longform is, veelal wordt ermee verwezen naar diepgaande online artikelen met een grote hoeveelheid content, die alle technieken van online schrijven belichamen. Hier benaderen we longforms als multimedia-essays die verrijkt kunnen worden met foto's, video's, tijdlijnen, biografieën, audioboeken, interviews, infographics, kaarten, interne en externe links etc.</p>
 <div class="infobox">
-<h1 id="hoe-moet-je-deze-how-to-gebruikten">Hoe moet je deze ‘How To’ gebruikten</h1>
-<p>In deze 'how to' zijn 4 longform experimenten te vinden met elk een eigen moeilijkheidsgraad - easy, moderate en expert - die aangeeft in welke mate technische kennis vereist is. Bij elk experiment vind je links op de pagina het voorbeeld en de technische overwegingen. Rechts kun je de benodigdheden en extra bronnen raadplegen.</p>
+<h3 id="hoe-moet-je-deze-how-to-gebruiken">Hoe moet je deze how-to gebruiken</h3>
+<p>In deze how-to zijn vier experimenten met longforms te vinden, elk met een eigen moeilijkheidsgraad die aangeeft in welke mate technische kennis vereist is: easy, moderate en expert. Bij elk experiment vind je links op de pagina het voorbeeld en de technische overwegingen. Rechts kun je de benodigdheden en extra bronnen raadplegen.</p>
 </div>
 <div class="linkbox">
 <h3 id="colofon">Colofon</h3>
-<p>Redactie: Miriam Rasch &amp; Leonieke van Dipten <br> Design: Lasse van den Bosch &amp; Marlon Harder, <a href="http://www.template01.info/">Template</a><br> Met dank aan: Wouter Hillaert (Rekto Verso), Marianne van den Berg (ArchiNed), Sophia Zürcher, Sonja van der Valk, Nadine Roestenburg, Daphne Rieken &amp; Laurence scherz.</p>
+<p>Redactie: Leonieke van Dipten &amp; Miriam Rasch</p>
+<p>Design: Lasse van den Bosch Christensen &amp; Marlon Harder, <a href="http://www.template01.info/">Template</a></p>
+<p>Met dank aan: Marina van den Berg (ArchiNed), Wouter Hillaert (rekto:verso), Daphne Rieken, Nadine Roestenburg, Laurence Scherz, Sonja van der Valk &amp; Sophia Zürcher.</p>
+<p>Uitgegeven door PublishingLab en Instituut voor Netwerkcultuur, Hogeschool van Amsterdam, met ondersteuning van Domein voor Kunstkritiek, Letterenfonds en Amsterdam Creative Industries Network [logo's]</p>
+<p>Amsterdam, 2016</p>
+<p>Contact: <a href="http://www.publishinglab.nl/">PublishingLab</a> en <a href="http://www.networkcultures.org">Instituut voor Netwerkcultuur</a></p>
 </div>
 </div>
 </div>
 <div id="lessons-learned" class="section level1">
-<h1>Lessons Learned</h1>
+<h1>Lessons learned</h1>
 <div id="auteurs" class="section level2">
-<h2>Auteurs<br></h2>
-<li>
-Denk vanuit de content.
-</li>
-<li>
-Denk na over een hybrid workflow: wat heb je nodig: audio, video tekst etc? En hoe kun je deze verbinden met elkaar en de mensen die je hiervoor nodig hebt.
-</li>
-<li>
-Vertrouw op de expertise van web developers en designers en betrek ze in een zo vroeg mogelijk stadium. Zij denken vanuit de techniek en zijn mogelijkheden en op deze manier hoeft dat geen belemmering te zijn.
-</li>
-<li>
-Een eerste publicatie is een investering qua tijd en geld, elk artikel wat daarna komt is die investering waard.
-</li>
-<li>
-Meestal blijkt er technisch meer mogelijk dan op voorhand gedacht.
-</li>
+<h2>Auteurs</h2>
+<ul>
+<li>Denk vanuit de content: wat wil je zeggen en hoe kun je dat het beste doen? Een bespreking van de productie van een film kan misschien beter in bewegend beeld dan in tekst gebeuren; vertellen waarom een boek je raakt misschien wel door een vlog</li>
+<li>Denk na over een hybride workflow. Dat betekent dat je vanaf het begin in kaart brengt wat je nodig hebt - audio, video, tekst, beeld - en zorgt dat die verschillende vormen geproduceerd worden. Welke expertise is nodig? Hoe kun je die vormen verbinden met elkaar?</li>
+<li>Vertrouw op de expertise van webdevelopers en designers en betrek ze in een zo vroeg mogelijk stadium. Laat ze meedenken vanuit de technische mogelijkheden zodat techniek geen belemmering hoeft te zijn.</li>
+<li>Een eerste longformpublicatie is een investering qua tijd en geld, elk artikel dat daarna komt is die investering waard.</li>
+<li>Meestal blijkt er technisch meer mogelijk dan op voorhand gedacht.</li>
+</ul>
 </div>
-<div id="developers-misschien-nog-aan-te-vullen-door-lasse-en-marlon" class="section level2">
-<h2>Developers (misschien nog aan te vullen door Lasse en Marlon)<br></h2>
-<li>
-Denk aan de backend en of je gebruik maakt van een Content Management Systeem(CMS).
-</li>
-<li>
-Overweeg de responsiveness en offline reading mogelijkheden.
-</li>
+<div id="developers" class="section level2">
+<h2>Developers</h2>
+<ul>
+<li>Denk aan de backend en of je gebruik maakt van een Content Management Systeem (CMS).</li>
+<li>Overweeg de responsiveness en offline reading mogelijkheden.</li>
+<li>Welke tools zijn open source beschikbaar en geschikt voor herhaald gebruik.</li>
+<li>Online content is niet definitief, maar kan bijna altijd makkelijk geüpdatet worden.</li>
+<li>Denk aan de hybride mogelijkheden. Houd de inhoud (tekst, beeld, video) wel apart van hoe de longform werkt of eruit ziet. Maak het ontwerp zo flexibel mogelijk.</li>
+</ul>
 </div>
 </div>
-<div id="de-multimediale-essay" class="section level1">
-<h1>De Multimediale Essay</h1>
+<div id="het-multimediale-essay" class="section level1">
+<h1>Het multimediale essay</h1>
 <div class="difficulty-level easy">
 
 </div>
@@ -2139,14 +2052,14 @@ Overweeg de responsiveness en offline reading mogelijkheden.
 </div>
 <div id="introductie-1" class="section level2">
 <h2>Introductie</h2>
-<p>Welke open source tools zijn er reeds beschikbaar om longforms te produceren en online content te verrijken en verbeteren? In dit experiment vind je een overzicht van longform, tijdline en image annotation tools die gemakkelijk en zonder al te veel technische kennis toe te passen zijn.</p>
+<p>Welke open source tools zijn er reeds beschikbaar om longforms te produceren en online content te verrijken en verbeteren? In dit experiment vind je een overzicht van longform, tijdliijn- en image annotation tools die gemakkelijk en zonder al te veel technische kennis toe te passen zijn.</p>
 </div>
 <div id="het-experiment" class="section level2">
 <h2>Het experiment</h2>
-<p><strong>Image annotatie tools en timeline tools</strong> <br></p>
-<p>Lees de gehele blogpost over het onderzoek <a href="http://www.publishinglab.nl/dekunstvandekritiek/2015/04/30/timeline-and-annotation-tools/">hier</a>.</p>
-<p><strong>Longform platforms</strong> <br> Welke open source tools zijn er reeds beschikbaar om een longform te producen?</p>
-<p>Lees de gehele blogpost over longform tools <a href="http://www.publishinglab.nl/dekunstvandekritiek/2015/03/31/developing-a-longform-platform-for-the-inc/">hier</a>.</p>
+<p><strong>Tijdlijn- en image annotation tools</strong> <br></p>
+<p>In samenwerking met ArchiNed zijn verschillende tijdlijntools onderzocht: Timeline JS, Timeglider, Tiki Toki, Dipity en Timeline Express. Timeline JS is open source, Dippity, Tiki Toki, Timeglider en Timeline Express gebruiken een Freemium model.</p>
+<p>Annotatietools die zijn getest zijn Thinglink, Annotorious en Cowbird. Een overzicht van voor- en nadelen, advies en aanbevelingen over de verschillende tools, lees je in de <a href="http://www.publishinglab.nl/dekunstvandekritiek/2015/04/30/timeline-and-annotation-tools/">blogpost over het onderzoek</a>.</p>
+<p><strong>Longform platforms</strong> <br> Ook is bekeken welke open source tools om een longform te producen er reeds beschikbaar zijn. De volgende platforms en tools zijn nader onderzocht: Medium, Aesop Story Engine (WordPress plugin), Creatavist en Exposure. Voor een overzicht van de bevindingen en verdere aanbevelingen, zie de <a href="http://www.publishinglab.nl/dekunstvandekritiek/2015/03/31/developing-a-longform-platform-for-the-inc/">blogpost over longform tools</a>.</p>
 <div class="figure">
 <img src="lib/ArchiNed_Comparison-chart.png" alt="" />
 
@@ -2154,6 +2067,8 @@ Overweeg de responsiveness en offline reading mogelijkheden.
 </div>
 <div id="technische-overwegingen" class="section level2">
 <h2>Technische overwegingen</h2>
+<p>Bedenk vooraf goed waar de tools aan moeten voldoen. Denk bijvoorbeeld aan welke file types ondersteund moeten worden en aan de implementatie op de website van bijvoorbeeld het medium.</p>
+<p>Vergeet bij het kiezen van een tool niet naar het licentiebeleid en de businessmodels te kijken. Zo kan het zijn dat je met het maken van een longform of timeline de rechten op de inhoud volledig afstaat. Daarnaast is het met gratis tools ook vaak zo dat er advertenties worden toegevoegd aan de timeline of longform.</p>
 Aesop Engine (Wordpress plugin)
 <div class="difficulty-level moderate">
 
@@ -2161,29 +2076,28 @@ Aesop Engine (Wordpress plugin)
 <a href="https://wordpress.org/plugins/timeline-express/">Timeline Express</a> (Wordpress plugin) <br>
 </div>
 <div class="infobox">
-<h1 id="een-extraatje">Een extraatje<br></h1>
-<h2 id="longform-tools">Longform tools <br></h2>
-<p>Exposure <br></p>
-<h2 id="timeline-tools">Timeline tools <br></h2>
+<h3 id="longform-tools">Longform tools</h3>
+<p>Exposure</p>
+<h3 id="timeline-tools">Timeline tools <br></h3>
 <p><a href="http://www.tiki-toki.com/">Timeline Tool Tiki-Toki</a> <br> <a href="http://www.timeglider.com/">Timeline Tool Timeglider</a> <br> <a href="http://timeline.knightlab.com/">Timeline Tool Timeline JS</a> <br> <a href="https://wordpress.org/plugins/timeline-express/">Timeline Express</a> (Wordpress plugin) <br> <a href="http://www.dipity.com/">Dipity</a> <br></p>
 <p><a href="http://memolane.com/">Memolane</a> <br></p>
-<h2 id="leuke-linkjes">Leuke Linkjes <br></h2>
+<h3 id="links">Links <br></h3>
 <p><a href="http://www.simile-widgets.org/">The SIMILE project of MIT</a> <br> <a href="https://projects.knightlab.com/">KnightLab</a><br> Lasso Frontend editor</p>
 </div>
 </div>
 </div>
 <div id="het-video-essay" class="section level1">
-<h1>Het Video Essay</h1>
+<h1>Het video-essay</h1>
 <div class="difficulty-level expert">
 
 </div>
 <div id="introductie-2" class="section level2">
 <h2>Introductie</h2>
-<p>Hoe kunnen we optimaal gebruik maken van de mogelijkheden van het web om een video essay te maken? In dit experiment is er gewerkt naar verschillende elementen: tekst, video’s, citaten uit de romans en geanimeerde dialogen.</p>
+<p>Hoe kunnen we optimaal gebruik maken van de mogelijkheden van het web om een video-essay te maken? In dit experiment is er gewerkt naar verschillende elementen: tekst, video’s, citaten uit de romans en geanimeerde dialogen.</p>
 </div>
 <div id="het-experiment-1" class="section level2">
 <h2>Het experiment</h2>
-<p>In dit experiment is er gezocht naar verschillende elementen om het essay te verreiken en hoe deze elementen onderdeel kunnen zijn van de lopende tekst. Hoe de leegbaarheid optimaal te houden?</p>
+<p>In dit experiment is er gezocht naar verschillende elementen om het essay te verreiken en hoe deze elementen onderdeel kunnen zijn van de lopende tekst. Hoe de leesbaarheid optimaal te houden?</p>
 <div class="figure">
 <img src="lib/video.png" alt="" />
 
@@ -2193,12 +2107,11 @@ Aesop Engine (Wordpress plugin)
 <h2>Technische overwegingen</h2>
 <p>Lasse en Marlon? - Het dialoog - automatisch spelen video - citaten</p>
 <div class="linkbox">
-<h2 id="benodigdheden">Benodigdheden</h2>
+<h3 id="benodigdheden">Benodigdheden</h3>
 <p>Lasse en Marlon? (indien die er zijn)</p>
 </div>
 <div class="infobox">
-<h2 id="een-extraatje-1">Een extraatje</h2>
-<h2 id="leuke-linkjes-1">Leuke Linkjes</h2>
+<h3 id="leuke-linkjes">Leuke Linkjes</h3>
 <p><a href="http://www.yhchang.com/THE_INLAND_SEA.html">Kinetische poezie van Y. H. Chang</a> <br> <a href="https://vimeo.com/kevinblee">Video essays van Kevin B. Lee</a><br></p>
 </div>
 </div>
@@ -2240,11 +2153,11 @@ Aesop Engine (Wordpress plugin)
 <li><p>Lasse en Marlon?</p></li>
 </ol>
 <div class="linkbox">
-<h2 id="benodigdheden-1">Benodigdheden</h2>
+<h3 id="benodigdheden-1">Benodigdheden</h3>
 <p>Lasse en Marlon? (indien die er zijn)</p>
 </div>
 <div class="infobox">
-<h2 id="een-extraatje-2">Een extraatje</h2>
+<h3 id="een-extraatje">Een extraatje</h3>
 <p>Hier komen leuke linkjes met inspirerende dingen/voorbeelden</p>
 </div>
 </div>
@@ -2264,11 +2177,11 @@ Aesop Engine (Wordpress plugin)
 <p>Voor deze image map is gezocht naar een alternatief op de meer traditionele image map. Het doel was iets te vinden met een moderne uitstraling, werkend op verschillende platforms.</p>
 <p>Er is gekozen om de traditionele image map te vervangen voor <a href="http://leafletjs.com/">Leaflet</a>; een open source JavaScript-bibliotheek voor interactieve kaarten. Hierdoor wordt je afbeelding minder statisch en je hebt meer het gevoel dat je kunt ’surfen’ in een digitale omgeving. Door het gebruik van Leaflet hoef je je foto niet op te delen in stukken maar kun je ‘markers’ toevoegen op je kaart. Door er op te klikken opent zich een pop-up met een speler voor audio.</p>
 <div class="linkbox">
-<h2 id="benodigdheden-2">Benodigdheden</h2>
+<h3 id="benodigdheden-2">Benodigdheden</h3>
 <p><a href="http://leafletjs.com/">leaflet</a> <br> <a href="http://www.outsharked.com/imagemapster/">imagemapster</a> <br> <a href="http://mattstow.com/experiment/responsive-image-maps/rwd-image-maps.html#ppg">Responsive Image Map Plugin</a> <br> <a href="http://www.jqueryrain.com/?xBLzPIQE">jQuery Rain</a> <br> <a href="http://build-failed.blogspot.nl/2012/11/zoomable-image-with-leaflet.html">Pedro’s Tech Mumblings</a> <br></p>
 </div>
 <div class="infobox">
-<h2 id="een-extraatje-3">Een extraatje** <br></h2>
+<h3 id="een-extraatje-1">Een extraatje** <br></h3>
 <p>http://psousa.net/demos/zoom-images/ <br></p>
 </div>
 </div>

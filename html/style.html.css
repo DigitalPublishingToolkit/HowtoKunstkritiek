@@ -22,7 +22,6 @@
   margin: 0px;
   background-color: transparent;
   width: calc(50% - 10px);
-  /*width: calc(70% - 20px);*/
   text-align: center;
   margin-top: 10px;
     -webkit-user-select: none;  /* Chrome all / Safari all */
@@ -69,6 +68,13 @@
 .infobox:hover .ui-resizable-e,
 #header:hover .ui-resizable-e {
   background: rgba(255,255,150,1);
+}
+
+
+.linkbox:hover,
+.infobox:hover,
+.thumbnail{
+  z-index: 10;
 }
 
 .pagetitle{
@@ -145,7 +151,7 @@ h1 {
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 22px;
   margin-bottom: -5px;
 }
 
@@ -167,7 +173,11 @@ code {
   color: black;
   font-size: 15px;
   font-weight: 400;
-  word-wrap: break-word;
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
 pre {
@@ -200,7 +210,6 @@ a:hover {
   background: lightcyan;
   position: relative;
   right: 0;
-  /*z-index: 7;*/
 }
 
 .infobox {
@@ -210,7 +219,6 @@ a:hover {
   background: #D8F3D1;
   position: relative;
   right: 0;
-  /*z-index: 7;*/
 }
 
 .infobox .level2 {
@@ -257,15 +265,15 @@ a:hover {
 }
 
 .expert::after {
-  content: "expert";
+  content: "difficulty level: expert";
 }
 
 .moderate::after {
-  content: "moderate";
+  content: "difficulty level: moderate";
 }
 
 .easy::after {
-  content: "easy";
+  content: "difficulty level: easy";
 }
 
 .level1 {
@@ -516,13 +524,6 @@ img {
   border: 1px solid black;
 }
 
-/*.lightbox:target {
-  outline: none;
-  display: block;
-}*/
-
-/**/
-
 [id*="intro"] {
 }
 
@@ -592,6 +593,11 @@ button:hover {
   transition: width 0.3s;
 }
 
+.fullWidth video,
+.fullWidth .videoPlay {
+  width: 30%;
+}
+
 .initWidth {
   width: ;
   transition: width 0.3s;
@@ -656,7 +662,8 @@ button:hover {
   .level2 .figure {
     float: none;
     margin: 0;
-  margin-left: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
 
   }
 

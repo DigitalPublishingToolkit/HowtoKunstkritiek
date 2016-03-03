@@ -7,7 +7,8 @@
 
       // resizeable stuff
 
-      $(function() {
+
+      function resizeAll(){
         $(".level1, .linkbox, .infobox, #header" ).resizable({
           handles: 'e',
           cancel: '.fullWidth',
@@ -21,8 +22,9 @@
           }
 
         });
+      }
 
-      });
+      // resizeAll()
 
       //generate header
 
@@ -104,6 +106,7 @@
 
       $('.linkbox, .infobox').each(function() {
         $(this).children().not('h1, .ui-resizable-handle').wrapAll('<div class="level2"></div>');
+        console.log($(this).children())
       })
 
       // toggle full div width
@@ -164,17 +167,18 @@
       if (window.location.hash == '#stylea' || window.location.hash == '' ){
       $('#b').remove()
       $('body').addClass('activeStyleA')
+
+      resizeAll()
+
     }else{
         $('head').append(styleB)
         $('#a').remove()
         $('body').removeClass('activeStyleA')
         $('#toggleMode').addClass('aActive')
         $('#toggleMode').removeClass('bActive')
-      if($(".level1, .linkbox, .infobox, #header" ).hasClass('ui-resizable')){
-        $(".level1, .linkbox, .infobox, #header" ).resizable('disable')
-      }
-      window.location.hash = 'styleb'
+        window.location.hash = 'styleb'
     }
+
 
   }
 
@@ -202,15 +206,21 @@
       $('#b').remove()
       $('#toggleMode').addClass('bActive')
       $('#toggleMode').removeClass('aActive')
+
+      resizeAll()
+      
       $(".level1, .linkbox, .infobox, #header" ).resizable('enable')
 
       window.location.hash = 'stylea'
+
+
 
     }
 
     positionPlayButton()
 
   }
+
 
   // Toggle Mode
 
@@ -305,6 +315,18 @@
     $(document).on('click','.figure .lightbox', function(){
       $('.figure:not(:first)').show()
       $('body').find('.figure').first().remove()
+    })
+
+    // let's open links in a new tab 
+    $('.level1 a, .infobox a, .linkbox a').each(function(){
+      var attr = $(this).attr('target');
+
+      // For some browsers, `attr` is undefined; for others,
+      // `attr` is false.  Check for both.
+      if (!typeof attr !== typeof undefined && !attr !== false) {
+        $(this).attr('target','_blank')
+          // ...
+      }
     })
 
 
