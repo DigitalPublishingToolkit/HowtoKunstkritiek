@@ -608,7 +608,7 @@
     width: auto;
     padding: 10px;
     display: inline-block;
-    margin: 5px;
+    margin: 10px;
     margin-left: 20px;
     float: right;
     font-weight: 400; 
@@ -1470,7 +1470,11 @@
   }
   
   .infobox p,
-  .linkbox p {
+  .infobox ol,
+  .infobox ul,
+  .linkbox p,
+  .linkbox ol,
+  .linkbox ul {
     font-size: 17px;
     font-weight: 700;
     font-family: 'Roboto Condensed', sans-serif;
@@ -1995,7 +1999,11 @@
 <h1>How-to voor digitale kunstkritiek</h1>
 <div id="introductie" class="section level2">
 <h2>Introductie</h2>
-<p>Hoe kunnen we op zinvolle wijze online kritiek bedrijven en koe kan de digitale omgeving de huidige kunstkritiek verrijken? Met deze vragen als uitgangspunt onderzocht het PublishingLab samen met verschillende kunst- en cultuurredacties de mogelijkheden die het genre van de 'longform' de kritiek biedt. In deze 'how-to' delen we deze ervaringen en kennis. ##Wat vind je in deze how-to Deze how-to biedt een praktische 'guide' voor culturele tijdschriften, kleine uitgeverijen, websites, blogs, critici, schrijvers, ontwerpers en ontwikkelaars voor het creëren en verrijken van longform-artikelen. Hoe maak je een longform? Waar te beginnen? In deze publicatie vind je vier verschillende experimenten - voorbeelden van longforms - met benodigdheden en tips om zelf aan de slag te gaan.</p>
+<p>Hoe kunnen we op zinvolle wijze online kritiek bedrijven en koe kan de digitale omgeving de huidige kunstkritiek verrijken? Met deze vragen als uitgangspunt onderzocht het PublishingLab samen met verschillende kunst- en cultuurredacties de mogelijkheden die het genre van de 'longform' de kritiek biedt. In deze 'how-to' delen we deze ervaringen en kennis.</p>
+</div>
+<div id="wat-vind-je-in-deze-how-to" class="section level2">
+<h2>Wat vind je in deze how-to</h2>
+<p>Deze how-to biedt een praktische 'guide' voor culturele tijdschriften, kleine uitgeverijen, websites, blogs, critici, schrijvers, ontwerpers en ontwikkelaars voor het creëren en verrijken van longform-artikelen. Hoe maak je een longform? Waar te beginnen? In deze publicatie vind je vier verschillende experimenten - voorbeelden van longforms - met benodigdheden en tips om zelf aan de slag te gaan.</p>
 </div>
 <div id="voor-wie-is-deze-how-to" class="section level2">
 <h2>Voor wie is deze how-to</h2>
@@ -2012,7 +2020,7 @@
 <h3 id="colofon">Colofon</h3>
 <p>Redactie: Leonieke van Dipten &amp; Miriam Rasch</p>
 <p>Design: Lasse van den Bosch Christensen &amp; Marlon Harder, <a href="http://www.template01.info/">Template</a></p>
-<p>Met dank aan: Marina van den Berg (ArchiNed), Wouter Hillaert (rekto:verso), Daphne Rieken, Nadine Roestenburg, Laurence Scherz, Sonja van der Valk &amp; Sophia Zürcher.</p>
+<p>Met dank aan: Marina van den Berg (ArchiNed), Boekmanstichting, Wouter Hillaert (rekto:verso), Daphne Rieken, Nadine Roestenburg, Laurence Scherz, Sonja van der Valk &amp; Sophia Zürcher.</p>
 <p>Uitgegeven door PublishingLab en Instituut voor Netwerkcultuur, Hogeschool van Amsterdam, met ondersteuning van Domein voor Kunstkritiek, Letterenfonds en Amsterdam Creative Industries Network [logo's]</p>
 <p>Amsterdam, 2016</p>
 <p>Contact: <a href="http://www.publishinglab.nl/">PublishingLab</a> en <a href="http://www.networkcultures.org">Instituut voor Netwerkcultuur</a></p>
@@ -2043,7 +2051,7 @@
 </div>
 </div>
 <div id="het-multimediale-essay" class="section level1">
-<h1>Het multimediale essay</h1>
+<h1>1. Het multimediale essay</h1>
 <div class="difficulty-level easy">
 
 </div>
@@ -2086,18 +2094,18 @@ Aesop Engine (Wordpress plugin)
 </div>
 </div>
 </div>
-<div id="het-video-essay" class="section level1">
-<h1>Het video-essay</h1>
+<div id="het-hybride-essay" class="section level1">
+<h1>2. Het hybride essay</h1>
 <div class="difficulty-level expert">
 
 </div>
 <div id="introductie-2" class="section level2">
 <h2>Introductie</h2>
-<p>Hoe kunnen we optimaal gebruik maken van de mogelijkheden van het web om een video-essay te maken? In dit experiment is er gewerkt naar verschillende elementen: tekst, video’s, citaten uit de romans en geanimeerde dialogen.</p>
+<p>Hoe kunnen we optimaal gebruik maken van de mogelijkheden van het web om een hybride essay te maken, waarin beeld en tekst gelijkwaardig zijn? Om dat voor elkaar te krijgen kan gewerkt worden met verschillende elementen zoals tekst, video’s, citaten en animatie.</p>
 </div>
 <div id="het-experiment-1" class="section level2">
 <h2>Het experiment</h2>
-<p>In dit experiment is er gezocht naar verschillende elementen om het essay te verreiken en hoe deze elementen onderdeel kunnen zijn van de lopende tekst. Hoe de leesbaarheid optimaal te houden?</p>
+<p>In de longform <a href="http://newsincerity.template01.info/">New Sincerity</a> is gewerkt aan een essay waarin tekst en beeld een even belangrijke rol spelen. Door korte clips op te nemen van dialogen, 'lopende' citaten en collages van verschillende filmfragmenten krijgt het essay een extra dimensie naast alleen de tekstuele. Beide staan op hetzelfde niveau; ze complementeren elkaar. Er is gekeken naar hoe de verschillende elementen onderdeel kunnen zijn van de lopende tekst om de leesbaarheid optimaal te houden. De elementen worden door te scrollen door het essay geactiveerd. De lezer hoeft daardoor nergens bewust op te klikken, maar ervaart de verschillende elementen - tekst, beeld en geluid - tegelijk.</p>
 <div class="figure">
 <img src="lib/video.png" alt="" />
 
@@ -2105,29 +2113,34 @@ Aesop Engine (Wordpress plugin)
 </div>
 <div id="technische-overwegingen-1" class="section level2">
 <h2>Technische overwegingen</h2>
-<p>Lasse en Marlon? - Het dialoog - automatisch spelen video - citaten</p>
+<p>In deze longform zijn beeld en tekst gelijk aan elkaar; ze moeten elkaar versterken. Daarom wisselen de video's en tekst elkaar af - soms staat de video in de lopende tekst, soms is die schermbreed opgenomen. Daarnaast is de tekst beweeglijk gemaakt door stukjes dialoog in beeld te laten verschijnen en citaten die 'uitrollen' tijdens het scrollen. Dat vereist meer technisch ontwerp dan een gemiddeld longform-template kan bieden. Het advies is in dit geval om de longform vanaf het begin ook technisch op te bouwen. Om het proces makkelijker te maken kun je gebruik maken van verschillende code <em>libraries</em>. Voor typografie op het web worden ook steeds meer handige tools ontwikkeld.</p>
 <div class="linkbox">
 <h3 id="benodigdheden">Benodigdheden</h3>
-<p>Lasse en Marlon? (indien die er zijn)</p>
+<p>Voor deze longform is er gebruik gemaakt van drie verschillende tools:</p>
+<ul>
+<li>Lettering.js: een jQuery plugin voor 'radical web typography'</li>
+<li>Fittext.js: een jQuery plugin die font formats flexibel maakt</li>
+<li>Textillate.je: een plugin voor CSS3 animaties van tekst</li>
+</ul>
 </div>
 <div class="infobox">
-<h3 id="leuke-linkjes">Leuke Linkjes</h3>
+<h3 id="extra">Extra</h3>
 <p><a href="http://www.yhchang.com/THE_INLAND_SEA.html">Kinetische poezie van Y. H. Chang</a> <br> <a href="https://vimeo.com/kevinblee">Video essays van Kevin B. Lee</a><br></p>
 </div>
 </div>
 </div>
 <div id="de-dialoog" class="section level1">
-<h1>De Dialoog</h1>
+<h1>3. De dialoog</h1>
 <div class="difficulty-level expert">
 
 </div>
 <div id="introductie-3" class="section level2">
 <h2>Introductie</h2>
-<p>Kan de lezer actief betrokken worden bij het vormen van een kritiek en hoe kunnen we de bekende commenting hiërarchie doorbreken? In dit experiment is onderzocht hoe het de lineaire verhaallijnt te doorbreken en hoe reacties van lezers onderdeel kunnen zijn van het artikel.</p>
+<p>Media zijn veel bezig met het betrekken van hun publiek. Kan de lezer actief betrokken worden bij een kritische beschouwing? Hoe kan daarbij de bekende hiërarchische structuur van tekst gevolgd door comments doorbroken worden? In dit experiment is onderzocht hoe van de lineaire verhaallijn kan worden afgeweken, zodat reacties van lezers een meer integraal onderdeel zijn van een artikel.</p>
 </div>
 <div id="het-experiment-2" class="section level2">
 <h2>Het experiment</h2>
-<p>In dit experiment is een systeem ontwikkeld waarin zowel de auteur, redacteur als lezer een bijdrage aan het verloop van het artikel kan leveren. Dit artikel of discussie format is zo gevisualiseerd dat lezersreacties tussen de discussie tussen auteur en redacteur komen te staan in een ping-pong-stijl. Daarnaast is een systeem ontwikkeld waarin de lezer op elke paragraaf kan reageren, waardoor de discussie dynamischer wordt.</p>
+<p>In dit experiment is een systeem ontwikkeld waarin zowel de auteur, redacteur als lezers een bijdrage aan een artikel kunnen leveren. Dit format is zo gevisualiseerd dat lezersreacties tussen en naast de redactionele tekst komen te staan, in een soort ping-pong-stijl. De lezer kan op elke paragraaf reageren en niet alleen onder de tekst, waardoor de discussie dynamischer wordt.</p>
 <div class="figure">
 <img src="lib/rekto.png" alt="" />
 
@@ -2140,49 +2153,49 @@ Aesop Engine (Wordpress plugin)
 </div>
 <p>Het project bestaat uit verschillende onderdelen, allemaal met hun complicaties: <br></p>
 <ol style="list-style-type: decimal">
-<li><p>(Backend) Het belangrijkste is het maken van een kader voor de lezers om te reageren en te antwoorden op de alinea's. Hier zullen een aantal zaken in overweging moeten worden genomen: Hoe sla je deze reactie op? Hoe laat je lezers reageren en hoe koppel je de reacties aan de juiste aline?</p></li>
-<li><p>Hoe je te beschermen tegen spam?</p></li>
-<li><p>(Frontend) Hoe worden reacties weergegeven naast bij de betreffende alinea's en hoe werkt de lay-out van het artikel?</p></li>
-<li><p>Hoe moeten we omgaan met verschillende platforms en browsers?</p></li>
+<li><p>(Back-end) Het belangrijkste is het maken van een kader voor de lezers om te reageren per alinea. Een aantal zaken moeten in overweging moeten worden genomen, zoals de vragen hoe je de reacties opslaat en hoe je de reacties koppelt aan de juiste alinea.</p></li>
+<li><p>Een andere belangrijk vraag is hoe je het systeem beschermt tegen spam.</p></li>
+<li><p>(Front-end) Hoe worden reacties weergegeven naast de betreffende alinea's en hoe werkt dan de lay-out van het complete artikel?</p></li>
+<li><p>Hoe ziet dat eruit in verschillende platformen en browsers?</p></li>
 </ol>
-<p>We hebben deze probleem opgelost door:</p>
+<p>In dit geval zijn de deze probleem opgelost op de volgende wijze:</p>
 <ol style="list-style-type: decimal">
-<li><p>(Backend) Omdat we (in dit geval) niet te maken hebben met een specifiek content management system (CMS), is de meest directe manier om reacties op te slaan als plain text-files. Iedere keer als er een reactie geplaatst wordt, wordt Javascript (frontend) aangeroepen om een command te versturen naar een PHP-script (backend) die de reactie in een textfile plaatst corresponderend met de betreffende alinea. Bij page-load zullen alle beschilbare textfiles opgehaald worden. Een 'reactie-bubble' zal verschijnen aan de zijde van elke alinea waar een textfile gekoppelt is.</p></li>
-<li><p>Om spam tegen te gaan, hebben we geprobeerd te werken met CAPTCHA's (Turing-tests),We raden dit echter af omdat die niet de meest optimale oplissing is. Om het geheel te versimpelen hebben we gekozen voor een eenvoudige 'security question': In welk jaar zitten we?</p></li>
-<li><p>Lasse en Marlon?</p></li>
-<li><p>Lasse en Marlon?</p></li>
+<li><p>(Back-end) Omdat we (in dit geval) niet te maken hebben met een specifiek content management system (CMS), is gekozen om reacties op te slaan als plain text-files. Iedere keer als er een reactie geplaatst wordt, stuurt Javascript (front-end) een command naar een PHP-script (back-end) die de reactie in een textfile plaatst corresponderend met de betreffende alinea. Als de pagina geladen wordt, zullen alle beschikbare text-files opgehaald worden. Een 'reactie-bubble' verschijnt naast elke alinea waar een text-file aan gekoppeld is.</p></li>
+<li><p>Om spam tegen te gaan, hebben we geprobeerd te werken met CAPTCHA's. Dat is echter niet de meest optimale oplossing. Om het geheel te versimpelen hebben we gekozen voor een eenvoudige 'security question': in welk jaar zitten we?</p></li>
+<li><p>In deze longform bestaat de rechterkant van de website uit een interactie tussen twee auteurs. Dat is al redelijk complex: eerst volgt een paragraaf uit het artikel van auteur A, daarna (in een ander lettertype) de reactie van auteur B, gevolgd door opnieuw commentaar van auteur A, enzovoort. Aanpassingen in lettertype en formaat maken de hiërarchie in dit onderdeel duidelijk. Er is voor gekozen om de reacties van de lezers niet in de tekst van de auteurs te forceren, maar de lezers de keuze te bieden tussen wat men wel of niet wil lezen. Mocht er een hevige discussie ontstaan in de lezersreacties, dan wordt de oorspronkelijke tekst te sterk uitgerekt. Die discussies krijgen daarom hun ruimte aan de linkerkant, waar ook weer op elkaar gereageerd kan worden. Net zoals auteur B op een enkel onderdeel van de tekst van auteur A reageert, kunnen lezers dat doen.</p></li>
 </ol>
 <div class="linkbox">
 <h3 id="benodigdheden-1">Benodigdheden</h3>
-<p>Lasse en Marlon? (indien die er zijn)</p>
-</div>
-<div class="infobox">
-<h3 id="een-extraatje">Een extraatje</h3>
-<p>Hier komen leuke linkjes met inspirerende dingen/voorbeelden</p>
+<p>Voor de longform-methode adviseren we geen externe libraries te gebruiken. Bouw het systeem van de grond af op met behulp van iQuery.</p>
 </div>
 </div>
 </div>
-<div id="de-image-map-beeldkaart" class="section level1">
-<h1>De Image Map / Beeldkaart</h1>
+<div id="de-image-map" class="section level1">
+<h1>4. De image map</h1>
 <div id="introductie-4" class="section level2">
 <h2>Introductie</h2>
-<p>Ter aanvulling op een artikel in het blad kunstbeeld is er een kleine omgeving gecreëerd waarin je een kijkje kan nemen in het atelier van de kunstenaar. Je kunt door het atelier bewegen en op verschillende objecten klikken. In deze foto zitten popups verwerkt met audio en tekst. <br> Link voorbeeld kunstbeeld</p>
+<p>Deze longform heeft de vorm van een grote afbeelding waarover je kunt bewegen om verschillende audio-fragmenten aan te klikken.</p>
 </div>
 <div id="het-experiment-3" class="section level2">
 <h2>Het experiment</h2>
-<p>omschrijven leonieke <img src="lib/Kunstbeeld.png" alt="" /></p>
+<p>In het onderhavige experiment werd dit gebruikt om letterlijk 'een kijkje te nemen' in het atelier van een kunstenaar. Hoe zorg je dat de lezer/kijker het gevoel krijgt door een ruimte te bewegen en daar informatie op te halen? Je kunt door het atelier bewegen en op verschillende objecten klikken. In de gebruikte schermvullende foto zitten pop-ups verwerkt met audio en tekst.</p>
+<div class="figure">
+<img src="lib/Kunstbeeld.png" alt="" />
+
+</div>
 </div>
 <div id="technische-overwegingen-3" class="section level2">
 <h2>Technische overwegingen</h2>
-<p>Voor deze image map is gezocht naar een alternatief op de meer traditionele image map. Het doel was iets te vinden met een moderne uitstraling, werkend op verschillende platforms.</p>
-<p>Er is gekozen om de traditionele image map te vervangen voor <a href="http://leafletjs.com/">Leaflet</a>; een open source JavaScript-bibliotheek voor interactieve kaarten. Hierdoor wordt je afbeelding minder statisch en je hebt meer het gevoel dat je kunt ’surfen’ in een digitale omgeving. Door het gebruik van Leaflet hoef je je foto niet op te delen in stukken maar kun je ‘markers’ toevoegen op je kaart. Door er op te klikken opent zich een pop-up met een speler voor audio.</p>
+<p>Voor deze responsive image map is gezocht naar een alternatief voor de meer traditionele image map. Het doel was een format te vinden met een moderne uitstraling, werkend op verschillende platforms.</p>
+<p>Er is gekozen om de traditionele image map te vervangen door <a href="http://leafletjs.com/">Leaflet</a>; een open source JavaScript-bibliotheek voor interactieve kaarten. Hierdoor wordt de afbeelding minder statisch en krijgt de gebruiker het gevoel dat ze kan 'surfen' door een digitale omgeving.</p>
+<p>Door het gebruik van Leaflet hoef je de foto niet op te delen in stukken maar kun je 'markers' toevoegen op de kaart. Door erop te klikken opent zich een pop-up met een speler voor audio.</p>
 <div class="linkbox">
 <h3 id="benodigdheden-2">Benodigdheden</h3>
 <p><a href="http://leafletjs.com/">leaflet</a> <br> <a href="http://www.outsharked.com/imagemapster/">imagemapster</a> <br> <a href="http://mattstow.com/experiment/responsive-image-maps/rwd-image-maps.html#ppg">Responsive Image Map Plugin</a> <br> <a href="http://www.jqueryrain.com/?xBLzPIQE">jQuery Rain</a> <br> <a href="http://build-failed.blogspot.nl/2012/11/zoomable-image-with-leaflet.html">Pedro’s Tech Mumblings</a> <br></p>
 </div>
 <div class="infobox">
-<h3 id="een-extraatje-1">Een extraatje** <br></h3>
-<p>http://psousa.net/demos/zoom-images/ <br></p>
+<h3 id="een-extraatje">Een extraatje <br></h3>
+<p><a href="http://psousa.net/demos/zoom-images/" class="uri">http://psousa.net/demos/zoom-images/</a><br></p>
 </div>
 </div>
 </div>

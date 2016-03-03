@@ -144,9 +144,11 @@ In deze longform zijn beeld en tekst gelijk aan elkaar; ze moeten elkaar verster
 <div class="linkbox">
 ### Benodigdheden
 Voor deze longform is er gebruik gemaakt van drie verschillende tools:
+
 * Lettering.js: een jQuery plugin voor 'radical web typography'
 * Fittext.js: een jQuery plugin die font formats flexibel maakt 
 * Textillate.je: een plugin voor CSS3 animaties van tekst
+
 </div>
 
 <div class="infobox">
@@ -195,19 +197,14 @@ Voor de longform-methode adviseren we geen externe libraries te gebruiken. Bouw 
 
 </div>
 
-<div class="infobox">
-### Een extraatje
-WEG?
-</div>
-
-
 #4. De image map
 
 ##Introductie
 Deze longform heeft de vorm van een grote afbeelding waarover je kunt bewegen om verschillende audio-fragmenten aan te klikken. 
 
 ##Het experiment
-In het onderhavige experiment werd dit gebruikt om letterlijk 'een kijkje te nemen' in het atelier van een kunstenaar. Hoe zorg je dat de lezer/kijker het gevoel krijgt door een ruimte te bewegen en daar informatie op te halen? Je kunt door het atelier bewegen en op verschillende objecten klikken. In de gebruikte schermvullende foto zitten pop-ups verwerkt met audio en tekst. 
+In het onderhavige experiment werd dit gebruikt om letterlijk 'een kijkje te nemen' in het atelier van een kunstenaar. Hoe zorg je dat de lezer/kijker het gevoel krijgt door een ruimte te bewegen en daar informatie op te halen? Je kunt door het atelier bewegen en op verschillende objecten klikken. In de gebruikte schermvullende foto zitten pop-ups verwerkt met audio en tekst.
+
 ![](lib/Kunstbeeld.png)
 
 ##Technische overwegingen
@@ -227,8 +224,8 @@ Door het gebruik van Leaflet hoef je de foto niet op te delen in stukken maar ku
 </div>
 
 <div class="infobox">
-### Een extraatje** <br>
-http://psousa.net/demos/zoom-images/ <br>
+### Een extraatje <br>
+[http://psousa.net/demos/zoom-images/](http://psousa.net/demos/zoom-images/)<br>
 </div>
 
 
