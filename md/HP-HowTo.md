@@ -155,14 +155,14 @@ Voor deze longform is er gebruik gemaakt van drie verschillende tools:
 </div>
 
 
-#De Dialoog
+#De dialoog
 <div class="difficulty-level expert"></div>
 
 ##Introductie
-Kan de lezer actief betrokken worden bij het vormen van een kritiek en hoe kunnen we de bekende commenting hiërarchie doorbreken? In dit experiment is onderzocht hoe het de lineaire verhaallijnt te doorbreken en hoe  reacties van lezers onderdeel kunnen zijn van het artikel. 
+Media zijn veel bezig met het betrekken van hun publiek. Kan de lezer actief betrokken worden bij een kritische beschouwing? Hoe kan daarbij de bekende hiërarchische structuur van tekst gevolgd door comments doorbroken worden? In dit experiment is onderzocht hoe van de lineaire verhaallijn kan worden afgeweken, zodat reacties van lezers een meer integraal onderdeel zijn van een artikel. 
 
 ##Het experiment
-In dit experiment is een systeem ontwikkeld waarin zowel de auteur, redacteur als lezer een bijdrage aan het verloop van het artikel kan leveren. Dit artikel of discussie format is zo gevisualiseerd dat lezersreacties tussen de discussie tussen auteur en redacteur komen te staan in een ping-pong-stijl. Daarnaast is een systeem ontwikkeld waarin de lezer op elke paragraaf kan reageren, waardoor de discussie dynamischer wordt.
+In dit experiment is een systeem ontwikkeld waarin zowel de auteur, redacteur als lezers een bijdrage aan een artikel kunnen leveren. Dit format is zo gevisualiseerd dat lezersreacties tussen en naast de redactionele tekst komen te staan, in een soort ping-pong-stijl. De lezer kan op elke paragraaf reageren en niet alleen onder de tekst, waardoor de discussie dynamischer wordt.
 
 ![](lib/rekto.png)
 
@@ -171,21 +171,21 @@ In dit experiment is een systeem ontwikkeld waarin zowel de auteur, redacteur al
 <div class="difficulty-level expert"></div>
 Het project bestaat uit verschillende onderdelen, allemaal met hun complicaties: <br>
 
-1. (Backend) Het belangrijkste is het maken van een kader voor de lezers om te reageren en te antwoorden op de alinea's. Hier zullen een aantal zaken in overweging moeten worden genomen: Hoe sla je deze reactie op? Hoe laat je lezers reageren en hoe koppel je de reacties aan de juiste aline?
+1. (Back-end) Het belangrijkste is het maken van een kader voor de lezers om te reageren per alinea. Een aantal zaken moeten in overweging moeten worden genomen, zoals de vragen hoe je de reacties opslaat en hoe je de reacties koppelt aan de juiste alinea.
 
-2.  Hoe je te beschermen tegen spam? 
+2.  Een andere belangrijk vraag is hoe je het systeem beschermt tegen spam.  
 
-3. (Frontend) Hoe worden reacties weergegeven naast bij de betreffende alinea's en hoe werkt de lay-out van het artikel?
+3. (Front-end) Hoe worden reacties weergegeven naast de betreffende alinea's en hoe werkt dan de lay-out van het complete artikel?
 
-4. Hoe moeten we omgaan met verschillende platforms en browsers?
+4. Hoe ziet dat eruit in verschillende platformen en browsers?
 
-We hebben deze probleem opgelost door:
+In dit geval zijn de deze probleem opgelost op de volgende wijze:
 
-1. (Backend) Omdat we (in dit geval) niet te maken hebben met een specifiek content management system (CMS), is de meest directe manier om reacties op te slaan als plain text-files. Iedere keer als er een reactie geplaatst wordt, wordt Javascript (frontend) aangeroepen om een command te versturen naar een PHP-script (backend) die de reactie in een textfile plaatst corresponderend met de betreffende alinea. Bij page-load zullen alle beschilbare textfiles opgehaald worden. Een 'reactie-bubble' zal verschijnen aan de zijde van elke alinea waar een textfile gekoppelt is. 
+1. (Back-end) Omdat we (in dit geval) niet te maken hebben met een specifiek content management system (CMS), is gekozen om reacties op te slaan als plain text-files. Iedere keer als er een reactie geplaatst wordt, stuurt Javascript (front-end) een command naar een PHP-script (back-end) die de reactie in een textfile plaatst corresponderend met de betreffende alinea. Als de pagina geladen wordt, zullen alle beschikbare text-files opgehaald worden. Een 'reactie-bubble' verschijnt naast elke alinea waar een text-file aan gekoppeld is. 
 
-2. Om spam tegen te gaan, hebben we geprobeerd te werken met CAPTCHA's (Turing-tests),We raden dit echter af omdat die niet de meest optimale oplissing is. Om het geheel te versimpelen hebben we gekozen voor een eenvoudige 'security question': In welk jaar zitten we?
+2. Om spam tegen te gaan, hebben we geprobeerd te werken met CAPTCHA's. Dat is echter niet de meest optimale oplossing. Om het geheel te versimpelen hebben we gekozen voor een eenvoudige 'security question': in welk jaar zitten we?
 
-3. Lasse en Marlon?
+3. In deze longform bestaat de rechterkant van de website uit een interactie tussen twee auteurs. Dat is al redelijk complex: eerst volgt een paragraaf uit het artikel van auteur A, daarna (in een ander lettertype) de reactie van auteur B, gevolgd door opnieuw commentaar van auteur A, enzovoort. Aanpassingen in lettertype en formaat maken de hiërarchie in dit onderdeel duidelijk. Er is voor gekozen om de reacties van de lezers niet in de tekst van de auteurs te forceren, maar de lezers de keuze te bieden tussen wat men wel of niet wil lezen. Mocht er een hevige discussie ontstaan in de lezersreacties, dan wordt de oorspronkelijke tekst te sterk uitgerekt. Die discussies krijgen daarom hun ruimte aan de linkerkant, waar ook weer op elkaar gereageerd kan worden. Net zoals auteur B op een enkel onderdeel van de tekst van auteur A reageert, kunnen lezers dat doen.
 
 3. Lasse en Marlon?
 
