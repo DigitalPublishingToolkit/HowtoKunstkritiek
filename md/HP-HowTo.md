@@ -137,18 +137,19 @@ In de longform [New Sincerity](http://newsincerity.template01.info/) is gewerkt 
 ![](lib/video.png)
 
 ##Technische overwegingen
-Lasse en Marlon?
- - Het dialoog
- - automatisch spelen video
- - citaten
+In deze longform zijn beeld en tekst gelijk aan elkaar; ze moeten elkaar versterken. Daarom wisselen de video's en tekst elkaar af - soms staat de video in de lopende tekst, soms is die schermbreed opgenomen. Daarnaast is de tekst beweeglijk gemaakt door stukjes dialoog in beeld te laten verschijnen en citaten die 'uitrollen' tijdens het scrollen. Dat vereist meer technisch ontwerp dan een gemiddeld longform-template kan bieden. Het advies is in dit geval om de longform vanaf het begin ook technisch op te bouwen. Om het proces makkelijker te maken kun je gebruik maken van verschillende code *libraries*. Voor typografie op het web worden ook steeds meer handige tools ontwikkeld.
+
 
 <div class="linkbox">
 ### Benodigdheden
-Lasse en Marlon? (indien die er zijn)
+Voor deze longform is er gebruik gemaakt van drie verschillende tools:
+* Lettering.js: een jQuery plugin voor 'radical web typography'
+* Fittext.js: een jQuery plugin die font formats flexibel maakt 
+* Textillate.je: een plugin voor CSS3 animaties van tekst
 </div>
 
 <div class="infobox">
-### Leuke Linkjes
+### Extra
 [Kinetische poezie van Y. H. Chang](http://www.yhchang.com/THE_INLAND_SEA.html) <br>
 [Video essays van Kevin B. Lee](https://vimeo.com/kevinblee)<br>
 </div>
