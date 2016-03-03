@@ -44,7 +44,7 @@ Redactie: Leonieke van Dipten & Miriam Rasch
 
 Design: Lasse van den Bosch Christensen & Marlon Harder, [Template](http://www.template01.info/)
 
-Met dank aan: Marina van den Berg (ArchiNed), Wouter Hillaert (rekto:verso), Daphne Rieken, Nadine Roestenburg, Laurence Scherz, Sonja van der Valk & Sophia Zürcher.
+Met dank aan: Marina van den Berg (ArchiNed), Boekmanstichting, Wouter Hillaert (rekto:verso), Daphne Rieken, Nadine Roestenburg, Laurence Scherz, Sonja van der Valk & Sophia Zürcher.
 
 Uitgegeven door PublishingLab en Instituut voor Netwerkcultuur, Hogeschool van Amsterdam, met ondersteuning van Domein voor Kunstkritiek, Letterenfonds en Amsterdam Creative Industries Network [logo's]  
 
@@ -125,15 +125,14 @@ Lasso Frontend editor
 </div>
 
 
-#Het video-essay
+#Het hybride essay
 <div class="difficulty-level expert"></div>
 
 ##Introductie 
-Hoe kunnen we optimaal gebruik maken van de mogelijkheden van het web om een video-essay te maken? In dit experiment is er gewerkt naar verschillende elementen: tekst, video’s, citaten uit de romans en geanimeerde dialogen.
+Hoe kunnen we optimaal gebruik maken van de mogelijkheden van het web om een hybride essay te maken, waarin beeld en tekst gelijkwaardig zijn? Om dat voor elkaar te krijgen kan gewerkt worden met verschillende elementen zoals tekst, video’s, citaten en animatie.
 
 ##Het experiment
-In dit experiment is er gezocht naar verschillende elementen om het essay te verreiken en hoe deze elementen onderdeel kunnen zijn van de lopende tekst.
-Hoe de leesbaarheid optimaal te houden?
+In de longform [New Sincerity](http://newsincerity.template01.info/) is gewerkt aan een essay waarin tekst en beeld een even belangrijke rol spelen. Door korte clips op te nemen van dialogen, 'lopende' citaten en collages van verschillende filmfragmenten krijgt het essay een extra dimensie naast alleen de tekstuele. Beide staan op hetzelfde niveau; ze complementeren elkaar. Er is gekeken naar hoe de verschillende elementen onderdeel kunnen zijn van de lopende tekst om de leesbaarheid optimaal te houden. De elementen worden door te scrollen door het essay geactiveerd. De lezer hoeft daardoor nergens bewust op te klikken, maar ervaart de verschillende elementen - tekst, beeld en geluid - tegelijk.
 
 ![](lib/video.png)
 
