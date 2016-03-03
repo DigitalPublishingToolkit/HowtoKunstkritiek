@@ -187,7 +187,6 @@ In dit experiment is een systeem ontwikkeld waarin zowel de auteur, redacteur al
 
 ##Technische overwegingen
 
-<div class="difficulty-level expert"></div>
 Het project bestaat uit verschillende onderdelen, allemaal met hun complicaties: <br>
 
 1. (Back-end) Het belangrijkste is het maken van een kader voor de lezers om te reageren per alinea. Een aantal zaken moeten in overweging moeten worden genomen, zoals de vragen hoe je de reacties opslaat en hoe je de reacties koppelt aan de juiste alinea.
