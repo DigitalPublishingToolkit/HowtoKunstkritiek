@@ -24,6 +24,7 @@ Rights: CC BY-NC 4.0
 
 ## Introductie
 Hoe kunnen we op zinvolle wijze online kritiek bedrijven en koe kan de digitale omgeving de huidige kunstkritiek verrijken? Met deze vragen als uitgangspunt onderzocht het PublishingLab samen met verschillende kunst- en cultuurredacties de mogelijkheden die het genre van de 'longform' de kritiek biedt. In deze 'how-to' delen we deze ervaringen en kennis. 
+
 ##Wat vind je in deze how-to 
 Deze how-to biedt een praktische 'guide' voor culturele tijdschriften, kleine uitgeverijen, websites, blogs, critici, schrijvers, ontwerpers en ontwikkelaars voor het creëren en verrijken van longform-artikelen. Hoe maak je een longform? Waar te beginnen? In deze publicatie vind je vier verschillende experimenten - voorbeelden van longforms - met benodigdheden en tips om zelf aan de slag te gaan.  
 
@@ -70,7 +71,7 @@ Contact: [PublishingLab](http://www.publishinglab.nl/) en [Instituut voor Netwer
 * Denk aan de hybride mogelijkheden. Houd de inhoud (tekst, beeld, video) wel apart van hoe de longform werkt of eruit ziet. Maak het ontwerp zo flexibel mogelijk.
 
 
-#Het multimediale essay
+#1. Het multimediale essay
 <div class="difficulty-level easy"></div>
 <div class="difficulty-level moderate"></div>
 
@@ -125,7 +126,7 @@ Lasso Frontend editor
 </div>
 
 
-#Het hybride essay
+#2. Het hybride essay
 <div class="difficulty-level expert"></div>
 
 ##Introductie 
@@ -155,7 +156,7 @@ Voor deze longform is er gebruik gemaakt van drie verschillende tools:
 </div>
 
 
-#De dialoog
+#3. De dialoog
 <div class="difficulty-level expert"></div>
 
 ##Introductie
@@ -187,35 +188,34 @@ In dit geval zijn de deze probleem opgelost op de volgende wijze:
 
 3. In deze longform bestaat de rechterkant van de website uit een interactie tussen twee auteurs. Dat is al redelijk complex: eerst volgt een paragraaf uit het artikel van auteur A, daarna (in een ander lettertype) de reactie van auteur B, gevolgd door opnieuw commentaar van auteur A, enzovoort. Aanpassingen in lettertype en formaat maken de hiërarchie in dit onderdeel duidelijk. Er is voor gekozen om de reacties van de lezers niet in de tekst van de auteurs te forceren, maar de lezers de keuze te bieden tussen wat men wel of niet wil lezen. Mocht er een hevige discussie ontstaan in de lezersreacties, dan wordt de oorspronkelijke tekst te sterk uitgerekt. Die discussies krijgen daarom hun ruimte aan de linkerkant, waar ook weer op elkaar gereageerd kan worden. Net zoals auteur B op een enkel onderdeel van de tekst van auteur A reageert, kunnen lezers dat doen.
 
-3. Lasse en Marlon?
-
 
 <div class="linkbox">
 ### Benodigdheden
-Lasse en Marlon? (indien die er zijn)
+Voor de longform-methode adviseren we geen externe libraries te gebruiken. Bouw het systeem van de grond af op met behulp van iQuery.
 
 </div>
 
 <div class="infobox">
 ### Een extraatje
-Hier komen leuke linkjes met inspirerende dingen/voorbeelden
+WEG?
 </div>
 
 
-#De Image Map / Beeldkaart
+#4. De image map
+
 ##Introductie
-Ter aanvulling op een artikel in het blad kunstbeeld is er een kleine omgeving gecreëerd waarin je een kijkje kan nemen in het atelier van de kunstenaar. Je kunt door het atelier bewegen en op verschillende objecten klikken. In deze foto zitten popups verwerkt met audio en tekst. <br>
-Link voorbeeld kunstbeeld
+Deze longform heeft de vorm van een grote afbeelding waarover je kunt bewegen om verschillende audio-fragmenten aan te klikken. 
 
 ##Het experiment
-omschrijven leonieke
+In het onderhavige experiment werd dit gebruikt om letterlijk 'een kijkje te nemen' in het atelier van een kunstenaar. Hoe zorg je dat de lezer/kijker het gevoel krijgt door een ruimte te bewegen en daar informatie op te halen? Je kunt door het atelier bewegen en op verschillende objecten klikken. In de gebruikte schermvullende foto zitten pop-ups verwerkt met audio en tekst. 
 ![](lib/Kunstbeeld.png)
 
 ##Technische overwegingen
-Voor deze image map is gezocht naar een alternatief op de meer traditionele image map. Het doel was iets te vinden met een moderne uitstraling, werkend op verschillende platforms. 
+Voor deze responsive image map is gezocht naar een alternatief voor de meer traditionele image map. Het doel was een format te vinden met een moderne uitstraling, werkend op verschillende platforms. 
 
-Er is gekozen om de traditionele image map te vervangen voor [Leaflet](http://leafletjs.com/); een open source JavaScript-bibliotheek voor interactieve kaarten. Hierdoor wordt je afbeelding minder statisch en je hebt meer het gevoel dat je kunt ’surfen’ in een digitale omgeving. 
-Door het gebruik van Leaflet hoef je je foto niet op te delen in stukken maar kun je ‘markers’ toevoegen op je kaart. Door er op te klikken opent zich een pop-up met een speler voor audio. 
+Er is gekozen om de traditionele image map te vervangen door [Leaflet](http://leafletjs.com/); een open source JavaScript-bibliotheek voor interactieve kaarten. Hierdoor wordt de afbeelding minder statisch en krijgt de gebruiker het gevoel dat ze kan 'surfen' door een digitale omgeving. 
+
+Door het gebruik van Leaflet hoef je de foto niet op te delen in stukken maar kun je 'markers' toevoegen op de kaart. Door erop te klikken opent zich een pop-up met een speler voor audio. 
 
 <div class="linkbox">
 ### Benodigdheden
