@@ -157,11 +157,21 @@ In de longform [New Sincerity](http://newsincerity.template01.info/) is gewerkt 
 In deze longform zijn beeld en tekst gelijk aan elkaar; ze moeten elkaar versterken. Daarom wisselen de video's en tekst elkaar af - soms staat de video in de lopende tekst, soms is die schermbreed opgenomen. Daarnaast is de tekst beweeglijk gemaakt door stukjes dialoog in beeld te laten verschijnen en citaten die 'uitrollen' tijdens het scrollen. Dat vereist meer technisch ontwerp dan een gemiddeld longform-template kan bieden. Het advies is in dit geval om de longform vanaf het begin ook technisch op te bouwen. Om het proces makkelijker te maken kun je gebruik maken van verschillende code *libraries*. Voor typografie op het web worden ook steeds meer handige tools ontwikkeld.
 
 <div class="linkbox">
+<<<<<<< HEAD
 ##Benodigdheden
  
 * [Lettering.js](http://letteringjs.com/) is een jQuery plugin voor 'radical Web Typography' 
 * [Fittext.js](http://fittextjs.com/) is een jQuery plugin die font formaat flexibel maakt 
 * [Textillate.js](https://jschr.github.io/textillate/) is een plugin voor CSS3 animaties van tekst
+=======
+### Benodigdheden
+Voor deze longform is er gebruik gemaakt van drie verschillende tools:
+
+* Lettering.js: een jQuery plugin voor 'radical web typography'
+* Fittext.js: een jQuery plugin die font formats flexibel maakt 
+* Textillate.je: een plugin voor CSS3 animaties van tekst
+
+>>>>>>> origin/master
 </div>
 
 <div class="infobox">
@@ -215,8 +225,13 @@ Voor de longform-methode adviseren we geen externe libraries te gebruiken. Bouw 
 Deze longform heeft de vorm van een grote afbeelding waarover je kunt bewegen om verschillende audio-fragmenten aan te klikken. 
 
 ##Het experiment
+<<<<<<< HEAD
 
 In het onderhavige experiment werd dit gebruikt om letterlijk 'een kijkje te nemen' in het atelier van een kunstenaar. Hoe zorg je dat de lezer/kijker het gevoel krijgt door een ruimte te bewegen en daar informatie op te halen? Je kunt door het atelier bewegen en op verschillende objecten klikken. In de gebruikte schermvullende foto zitten pop-ups verwerkt met audio en tekst. 
+=======
+In het onderhavige experiment werd dit gebruikt om letterlijk 'een kijkje te nemen' in het atelier van een kunstenaar. Hoe zorg je dat de lezer/kijker het gevoel krijgt door een ruimte te bewegen en daar informatie op te halen? Je kunt door het atelier bewegen en op verschillende objecten klikken. In de gebruikte schermvullende foto zitten pop-ups verwerkt met audio en tekst.
+
+>>>>>>> origin/master
 ![](lib/Kunstbeeld.png)
 
 ##Technische overwegingen
@@ -238,9 +253,14 @@ Door het gebruik van Leaflet hoef je de foto niet op te delen in stukken maar ku
 </div>
 
 <div class="infobox">
+<<<<<<< HEAD
 ##Een extraatje
 
 * [Demo Leaflet image zoom](http://psousa.net/demos/zoom-images/)
+=======
+### Een extraatje <br>
+[http://psousa.net/demos/zoom-images/](http://psousa.net/demos/zoom-images/)<br>
+>>>>>>> origin/master
 </div>
 
 

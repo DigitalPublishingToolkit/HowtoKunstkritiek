@@ -122,6 +122,7 @@ Vergeet bij het kiezen van een tool niet naar het licentiebeleid en de businessm
 
 
 #2. Het hybride essay
+<<<<<<< HEAD
 
 <div class="difficulty-level expert"></div>
 
@@ -131,11 +132,20 @@ Hoe kunnen we optimaal gebruik maken van de mogelijkheden van het web om een hyb
 
 ##Het experiment
 
+=======
+<div class="difficulty-level expert"></div>
+
+##Introductie 
+Hoe kunnen we optimaal gebruik maken van de mogelijkheden van het web om een hybride essay te maken, waarin beeld en tekst gelijkwaardig zijn? Om dat voor elkaar te krijgen kan gewerkt worden met verschillende elementen zoals tekst, video’s, citaten en animatie.
+
+##Het experiment
+>>>>>>> origin/master
 In de longform [New Sincerity](http://newsincerity.template01.info/) is gewerkt aan een essay waarin tekst en beeld een even belangrijke rol spelen. Door korte clips op te nemen van dialogen, 'lopende' citaten en collages van verschillende filmfragmenten krijgt het essay een extra dimensie naast alleen de tekstuele. Beide staan op hetzelfde niveau; ze complementeren elkaar. Er is gekeken naar hoe de verschillende elementen onderdeel kunnen zijn van de lopende tekst om de leesbaarheid optimaal te houden. De elementen worden door te scrollen door het essay geactiveerd. De lezer hoeft daardoor nergens bewust op te klikken, maar ervaart de verschillende elementen - tekst, beeld en geluid - tegelijk.
 
 ![](lib/video.png)
 
 ##Technische overwegingen
+<<<<<<< HEAD
 
 In deze longform zijn beeld en tekst gelijk aan elkaar; ze moeten elkaar versterken. Daarom wisselen de video's en tekst elkaar af - soms staat de video in de lopende tekst, soms is die schermbreed opgenomen. Daarnaast is de tekst beweeglijk gemaakt door stukjes dialoog in beeld te laten verschijnen en citaten die 'uitrollen' tijdens het scrollen. Dat vereist meer technisch ontwerp dan een gemiddeld longform-template kan bieden. Het advies is in dit geval om de longform vanaf het begin ook technisch op te bouwen. Om het proces makkelijker te maken kun je gebruik maken van verschillende code *libraries*. Voor typografie op het web worden ook steeds meer handige tools ontwikkeld.
 
@@ -149,6 +159,26 @@ In deze longform zijn beeld en tekst gelijk aan elkaar; ze moeten elkaar verster
 
 <div class="infobox">
 ##Een extraatje
+=======
+In deze longform zijn beeld en tekst gelijk aan elkaar; ze moeten elkaar versterken. Daarom wisselen de video's en tekst elkaar af - soms staat de video in de lopende tekst, soms is die schermbreed opgenomen. Daarnaast is de tekst beweeglijk gemaakt door stukjes dialoog in beeld te laten verschijnen en citaten die 'uitrollen' tijdens het scrollen. Dat vereist meer technisch ontwerp dan een gemiddeld longform-template kan bieden. Het advies is in dit geval om de longform vanaf het begin ook technisch op te bouwen. Om het proces makkelijker te maken kun je gebruik maken van verschillende code *libraries*. Voor typografie op het web worden ook steeds meer handige tools ontwikkeld.
+
+
+<div class="linkbox">
+### Benodigdheden
+Voor deze longform is er gebruik gemaakt van drie verschillende tools:
+
+* Lettering.js: een jQuery plugin voor 'radical web typography'
+* Fittext.js: een jQuery plugin die font formats flexibel maakt 
+* Textillate.je: een plugin voor CSS3 animaties van tekst
+
+</div>
+
+<div class="infobox">
+### Extra
+[Kinetische poezie van Y. H. Chang](http://www.yhchang.com/THE_INLAND_SEA.html) <br>
+[Video essays van Kevin B. Lee](https://vimeo.com/kevinblee)<br>
+</div>
+>>>>>>> origin/master
 
 * [Kinetische poezie van Y. H. Chang](http://www.yhchang.com/THE_INLAND_SEA.html) <br>
 * [Video essays van Kevin B. Lee](https://vimeo.com/kevinblee)<br>
@@ -158,17 +188,24 @@ In deze longform zijn beeld en tekst gelijk aan elkaar; ze moeten elkaar verster
 <div class="difficulty-level expert"></div>
 
 ##Introductie
+<<<<<<< HEAD
 
 Media zijn veel bezig met het betrekken van hun publiek. Kan de lezer actief betrokken worden bij een kritische beschouwing? Hoe kan daarbij de bekende hiërarchische structuur van tekst gevolgd door comments doorbroken worden? In dit experiment is onderzocht hoe van de lineaire verhaallijn kan worden afgeweken, zodat reacties van lezers een meer integraal onderdeel zijn van een artikel. 
 
 ##Het experiment
 
+=======
+Media zijn veel bezig met het betrekken van hun publiek. Kan de lezer actief betrokken worden bij een kritische beschouwing? Hoe kan daarbij de bekende hiërarchische structuur van tekst gevolgd door comments doorbroken worden? In dit experiment is onderzocht hoe van de lineaire verhaallijn kan worden afgeweken, zodat reacties van lezers een meer integraal onderdeel zijn van een artikel. 
+
+##Het experiment
+>>>>>>> origin/master
 In dit experiment is een systeem ontwikkeld waarin zowel de auteur, redacteur als lezers een bijdrage aan een artikel kunnen leveren. Dit format is zo gevisualiseerd dat lezersreacties tussen en naast de redactionele tekst komen te staan, in een soort ping-pong-stijl. De lezer kan op elke paragraaf reageren en niet alleen onder de tekst, waardoor de discussie dynamischer wordt.
 
 ![](lib/rekto.png)
 
 
 ##Technische overwegingen
+<<<<<<< HEAD
 
 Het project bestaat uit verschillende onderdelen, allemaal met hun complicaties: <br>
 
@@ -183,17 +220,43 @@ In dit geval zijn de deze probleem opgelost op de volgende wijze:
 1. (Back-end) Omdat we (in dit geval) niet te maken hebben met een specifiek content management system (CMS), is gekozen om reacties op te slaan als plain text-files. Iedere keer als er een reactie geplaatst wordt, stuurt Javascript (front-end) een command naar een PHP-script (back-end) die de reactie in een textfile plaatst corresponderend met de betreffende alinea. Als de pagina geladen wordt, zullen alle beschikbare text-files opgehaald worden. Een 'reactie-bubble' verschijnt naast elke alinea waar een text-file aan gekoppeld is. 
 
 2. Om spam tegen te gaan, hebben we geprobeerd te werken met CAPTCHA's. Dat is echter niet de meest optimale oplossing. Om het geheel te versimpelen hebben we gekozen voor een eenvoudige 'security question': in welk jaar zitten we?
+=======
+<div class="difficulty-level expert"></div>
+Het project bestaat uit verschillende onderdelen, allemaal met hun complicaties: <br>
+
+1. (Back-end) Het belangrijkste is het maken van een kader voor de lezers om te reageren per alinea. Een aantal zaken moeten in overweging moeten worden genomen, zoals de vragen hoe je de reacties opslaat en hoe je de reacties koppelt aan de juiste alinea.
+
+2.  Een andere belangrijk vraag is hoe je het systeem beschermt tegen spam.  
+
+3. (Front-end) Hoe worden reacties weergegeven naast de betreffende alinea's en hoe werkt dan de lay-out van het complete artikel?
+
+4. Hoe ziet dat eruit in verschillende platformen en browsers?
+
+In dit geval zijn de deze probleem opgelost op de volgende wijze:
+
+1. (Back-end) Omdat we (in dit geval) niet te maken hebben met een specifiek content management system (CMS), is gekozen om reacties op te slaan als plain text-files. Iedere keer als er een reactie geplaatst wordt, stuurt Javascript (front-end) een command naar een PHP-script (back-end) die de reactie in een textfile plaatst corresponderend met de betreffende alinea. Als de pagina geladen wordt, zullen alle beschikbare text-files opgehaald worden. Een 'reactie-bubble' verschijnt naast elke alinea waar een text-file aan gekoppeld is. 
+
+2. Om spam tegen te gaan, hebben we geprobeerd te werken met CAPTCHA's. Dat is echter niet de meest optimale oplossing. Om het geheel te versimpelen hebben we gekozen voor een eenvoudige 'security question': in welk jaar zitten we?
+
+3. In deze longform bestaat de rechterkant van de website uit een interactie tussen twee auteurs. Dat is al redelijk complex: eerst volgt een paragraaf uit het artikel van auteur A, daarna (in een ander lettertype) de reactie van auteur B, gevolgd door opnieuw commentaar van auteur A, enzovoort. Aanpassingen in lettertype en formaat maken de hiërarchie in dit onderdeel duidelijk. Er is voor gekozen om de reacties van de lezers niet in de tekst van de auteurs te forceren, maar de lezers de keuze te bieden tussen wat men wel of niet wil lezen. Mocht er een hevige discussie ontstaan in de lezersreacties, dan wordt de oorspronkelijke tekst te sterk uitgerekt. Die discussies krijgen daarom hun ruimte aan de linkerkant, waar ook weer op elkaar gereageerd kan worden. Net zoals auteur B op een enkel onderdeel van de tekst van auteur A reageert, kunnen lezers dat doen.
+>>>>>>> origin/master
 
 3. In deze longform bestaat de rechterkant van de website uit een interactie tussen twee auteurs. Dat is al redelijk complex: eerst volgt een paragraaf uit het artikel van auteur A, daarna (in een ander lettertype) de reactie van auteur B, gevolgd door opnieuw commentaar van auteur A, enzovoort. Aanpassingen in lettertype en formaat maken de hiërarchie in dit onderdeel duidelijk. Er is voor gekozen om de reacties van de lezers niet in de tekst van de auteurs te forceren, maar de lezers de keuze te bieden tussen wat men wel of niet wil lezen. Mocht er een hevige discussie ontstaan in de lezersreacties, dan wordt de oorspronkelijke tekst te sterk uitgerekt. Die discussies krijgen daarom hun ruimte aan de linkerkant, waar ook weer op elkaar gereageerd kan worden. Net zoals auteur B op een enkel onderdeel van de tekst van auteur A reageert, kunnen lezers dat doen.
 
 <div class="linkbox">
 ### Benodigdheden
+<<<<<<< HEAD
 Voor de longform-methode adviseren we geen externe libraries te gebruiken. Bouw het systeem van de grond af op met behulp van [jQuery](https://jquery.com/).
+=======
+Voor de longform-methode adviseren we geen externe libraries te gebruiken. Bouw het systeem van de grond af op met behulp van iQuery.
+
+>>>>>>> origin/master
 </div>
 
 #4. De image map
 
 ##Introductie
+<<<<<<< HEAD
 
 Deze longform heeft de vorm van een grote afbeelding waarover je kunt bewegen om verschillende audio-fragmenten aan te klikken. 
 
@@ -208,6 +271,20 @@ Voor deze responsive image map is gezocht naar een alternatief voor de meer trad
 
 Er is gekozen om de traditionele image map te vervangen door [Leaflet](http://leafletjs.com/); een open source JavaScript-bibliotheek voor interactieve kaarten. Hierdoor wordt de afbeelding minder statisch en krijgt de gebruiker het gevoel dat ze kan 'surfen' door een digitale omgeving. 
 
+=======
+Deze longform heeft de vorm van een grote afbeelding waarover je kunt bewegen om verschillende audio-fragmenten aan te klikken. 
+
+##Het experiment
+In het onderhavige experiment werd dit gebruikt om letterlijk 'een kijkje te nemen' in het atelier van een kunstenaar. Hoe zorg je dat de lezer/kijker het gevoel krijgt door een ruimte te bewegen en daar informatie op te halen? Je kunt door het atelier bewegen en op verschillende objecten klikken. In de gebruikte schermvullende foto zitten pop-ups verwerkt met audio en tekst.
+
+![](lib/Kunstbeeld.png)
+
+##Technische overwegingen
+Voor deze responsive image map is gezocht naar een alternatief voor de meer traditionele image map. Het doel was een format te vinden met een moderne uitstraling, werkend op verschillende platforms. 
+
+Er is gekozen om de traditionele image map te vervangen door [Leaflet](http://leafletjs.com/); een open source JavaScript-bibliotheek voor interactieve kaarten. Hierdoor wordt de afbeelding minder statisch en krijgt de gebruiker het gevoel dat ze kan 'surfen' door een digitale omgeving. 
+
+>>>>>>> origin/master
 Door het gebruik van Leaflet hoef je de foto niet op te delen in stukken maar kun je 'markers' toevoegen op de kaart. Door erop te klikken opent zich een pop-up met een speler voor audio. 
 
 <div class="linkbox">
@@ -221,9 +298,14 @@ Door het gebruik van Leaflet hoef je de foto niet op te delen in stukken maar ku
 </div>
 
 <div class="infobox">
+<<<<<<< HEAD
 ##Een extraatje
 
 * [Demo Leaflet image zoom](http://psousa.net/demos/zoom-images/)
+=======
+### Een extraatje <br>
+[http://psousa.net/demos/zoom-images/](http://psousa.net/demos/zoom-images/)<br>
+>>>>>>> origin/master
 </div>
 
 
