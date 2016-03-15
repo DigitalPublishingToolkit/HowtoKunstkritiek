@@ -51,7 +51,7 @@ Design: Lasse van den Bosch Christensen & Marlon Harder, [Template](http://www.t
 
 Met dank aan: Marina van den Berg (ArchiNed), Boekmanstichting, Wouter Hillaert (rekto:verso), Daphne Rieken, Nadine Roestenburg, Laurence Scherz, Sonja van der Valk & Sophia Zürcher.
 
-Uitgegeven door PublishingLab en Instituut voor Netwerkcultuur, Hogeschool van Amsterdam, met ondersteuning van Domein voor Kunstkritiek, Letterenfonds en Amsterdam Creative Industries Network [logo's]  
+Uitgegeven door PublishingLab en Instituut voor Netwerkcultuur, Hogeschool van Amsterdam, met ondersteuning van Domein voor Kunstkritiek, Letterenfonds en Amsterdam Creative Industries Network   
 
 Amsterdam, 2016  
 
